@@ -83,8 +83,12 @@ a, a:hover {
         text-decoration: underline;
     }
 
-/*設定商品分頁的連結色彩*/
+.card a {
+    text-decoration: none;
+    color: black;
+}
 
+/*設定商品分頁的連結色彩*/
 .page-link:hover {
     color: #999;
     border-color: #e6e6e6;
