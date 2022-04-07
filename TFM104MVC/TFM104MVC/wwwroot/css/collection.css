@@ -1,144 +1,113 @@
-/*åº•*/
-.container {
-    margin-top: 15px;
+html,
+body {
+    font-family: "Lato", "Noto Sans TC", sans-serif;
+    /* outline: 3px solid tomato; */
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding: 0;
+    color: #333333;
+    /* background-color: #f6f7f8; */
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    /* box-sizing: border-box; */
 }
 
-.page-wrap {
-    background-color: silver;
-}
-/*æŒ‰éˆ•æ•ˆæœ*/
-.btn {
-    font-size: 14px;
-    color: #FFF;
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    background-color: rgba(57, 168, 219, 0.781);
-    border: none;
-    float: right;
-    position: relative;
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
-    .btn > p {
-        position: relative;
-        z-index: 1;
+.btn-outline-success {
+    color: #26bec9;
+    border-color: #26bec9;
+}
+
+    .btn-outline-success:hover {
+        color: #fff;
+        background-color: #26bec9;
+        border-color: #26bec9;
     }
 
-    .btn::before {
-        content: "";
-        width: 0%;
-        height: 0%;
-        display: block;
-        background-color: rgba(55, 176, 192, 0.404);
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: all .3s ease;
+    .btn-outline-success:hover, .btn-outline-primary:hover {
+        color: #fff;
+        background-color: #26bec9;
+        border-color: #26bec9;
     }
 
-    .btn:hover {
-        color: rgba(53, 53, 71, 0.795);
-    }
-
-        .btn:hover::before {
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-        }
-/*å‘ä¸Šå·è»¸æŒ‰éˆ•*/
-.scroll-top-inner {
-    opacity: 40%;
-    background-color: #fff;
-    color: rgb(65, 147, 202);
-    border-style: none;
-    border-radius: 50%;
-    float: right;
-    width: 48px;
-    height: 48px;
+.row-cols-1 {
+    background-color: aqua;
 }
 
-/*é‚Šæ¡†*/
-#border-items {
-    width: 650px;
-    height: 365px;
-}
-/*å·¦è³‡è¨Šæ¬„*/
-.bd_board {
-    background-color: #FFF;
-    margin-top: 5px;
-    width: 250px;
-    height: 450px;
-    text-align: center;
-}
-
-.card-items {
-    width: 770px;
-    height: 180px;
-    margin: auto;
-    line-height: 20px;
-}
-
-.card-body {
-    margin-left: 20px;
-    font-size: small;
-    align-items: center;
-}
-
-.card-info {
-    max-height: 180px;
-    margin: auto;
-}
-
-.card-info-inner {
-    align-items: center;
-}
-
-.card-intro {
-    align-items: center;
-    margin-top: 10px;
-}
-
-.card-img-top {
-    align-items: center;
-    margin-top: 10px;
-    width: 110px;
-    height: 110px;
-}
-
-.card-username {
-    font-size: 16px;
-    text-align: center;
-    margin-right: 15px;
-}
-
-#border-online {
-    width: 265px;
-}
-
-#user_account {
-    margin: auto;
-    text-align: center;
-}
-
-.user-account {
-    margin-top: 0px;
-    text-align: center;
-    white-space: nowrap;
-}
-/*å³è³‡è¨Šæ¬„*/
-.board {
-    height: 1000px;
+.item {
     background-color: white;
+    border-radius: 5px;
+    border-color: azure;
+    /* border: 1px solid gray; */
+    margin-bottom: 5%;
+    padding: 5%;
 }
 
-.page-head {
-    margin-top: 5px;
-    margin-left: 5px;
+.filter-block {
+    background-color: white;
+    border-radius: 5px;
+    border-color: azure;
+    /* border: 1px solid gray; */
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+}
+/* .filter > a, a:hover, a:visited, a:link, a:active {
+    color:#000;
+    text-decoration:none;
+    outline: none;
+} */
+.product-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/*åº•*/
 
+/*³sµ²¦â±m³]©w*/
+a, a:hover {
+    text-decoration: none;
+    color: #26bec9;
+    cursor: pointer;
+    background-color: transparent;
+    transition: .25s;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+/*³]©w°Ó«~¤À­¶ªº³sµ²¦â±m*/
+.page-link:hover {
+    color: #999;
+    border-color: #e6e6e6;
+    text-decoration: none;
+    background-color: #e9ecef;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #26bec9;
+    border-color: #26bec9;
+}
+
+.page-link {
+    color: #999;
+    border-color: #e6e6e6;
+}
+
+/*©³*/
 .page-wrap {
     background-color: rgb(245, 245, 245);
     display: block;
@@ -147,30 +116,7 @@
     margin-bottom: 40px;
     padding-top: 20px;
 }
-/*æŒ‰éˆ•*/
-.btn {
-    font-size: 14px;
-    color: #FFF;
-    width: 90px;
-    height: 35px;
-    text-align: center;
-    margin: 6px;
-    background-color: darkturquoise;
-    border: none;
-    float: right;
-    position: relative;
-}
-
-    .btn > p {
-        position: relative;
-        z-index: 1;
-    }
-
-    .btn:hover {
-        color: gray;
-    }
-
-/*å‘ä¸Šå·è»¸æŒ‰éˆ•*/
+/*¦V¤W¨÷¶b«ö¶s*/
 .scroll-top-inner {
     opacity: 40%;
     background-color: #fff;
@@ -182,12 +128,12 @@
     height: 48px;
 }
 
-/*å·¦è³‡è¨Šæ¬„*/
+/*¥ª¸ê°TÄæ*/
 
 .card-items {
     padding: 15px;
 }
-/*ä½¿ç”¨è€…åç¨±*/
+/*¨Ï¥ÎªÌ¦WºÙ*/
 h4 {
     display: block;
     margin-block-start: 1em;
@@ -202,7 +148,7 @@ h4 {
 .break-word {
     text-align: center !important;
 }
-/*å·¦æ¬„ä½¿ç”¨è€…è³‡è¨Š*/
+/*¥ªÄæ¨Ï¥ÎªÌ¸ê°T*/
 .page-aside {
     display: block;
     box-sizing: border-box;
@@ -241,14 +187,14 @@ h4 {
     background-size: cover;
     background-position: 50%;
 }
-/*å·¦æ¬„ä¸‹é¸å–®*/
+/*¥ªÄæ¤U¿ï³æ*/
 .page-menu {
     margin-top: 15px;
     list-style: none;
     padding-left: 0;
     background-color: #FFF;
     border-radius: 5px;
-    font-family: Noto Sans TC,å¾®è»Ÿé›…é»‘,Microsoft Yahei,sans-serif;
+    font-family: Noto Sans TC,·L³n¶®¶Â,Microsoft Yahei,sans-serif;
 }
 
 .list-item-group {
@@ -288,7 +234,7 @@ ul li {
     ul li a:hover {
         color: #eaeaea;
     }
-/*å·¦ä¸‹æ¬„icon*/
+/*¥ª¤UÄæicon*/
 #link-account-setting {
     display: flex;
     -webkit-box-align: start;
@@ -333,7 +279,7 @@ a {
     width: 4px;
     background-color: #26bec9;
 }
-
+/*³q¥Î(?)*/
 * {
     box-sizing: border-box;
 }
@@ -341,8 +287,7 @@ a {
 *, ::after, ::before {
     box-sizing: border-box;
 }
-
-/*ç™»å…¥*/
+/*µn¤J*/
 .page-aside .account-group {
     border-top: 1px solid #eee;
     margin: 15px -15px 0;
@@ -358,10 +303,9 @@ a {
     margin: 10px;
     text-align: left;
     line-height: 1.4;
-    font-family: Noto Sans TC,å¾®è»Ÿé›…é»‘,Microsoft Yahei,sans-serif;
+    font-family: Noto Sans TC,·L³n¶®¶Â,Microsoft Yahei,sans-serif;
 }
-
-/*å³è³‡è¨Šæ¬„*/
+/*¥k¸ê°TÄæ¥DÅé*/
 .page-wrap .board {
     border: 0;
     margin-top: 0;
@@ -379,7 +323,7 @@ a {
     margin: 0 -20px 20px;
     padding: 0 20px;
 }
-
+/*¤å¦r*/
 h3 {
     line-height: 1.5;
     font-family: inherit;
@@ -387,3 +331,62 @@ h3 {
     margin: 0.67em 0;
     margin-left: 6px;
 }
+
+.subtitle {
+    margin-left: 3px;
+    color: #26bec9;
+}
+
+.sub {
+    margin-left: 5px;
+    color: #333;
+}
+
+.subtitle p {
+    display: inline-block;
+    text-align: left;
+}
+
+h5 {
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/*¥kÄæ¥d¤ù*/
+.card-body {
+    text-align: left;
+}
+
+.card-text {
+    font-size: 0.85em;
+    color: #666;
+}
+/*¤U©Ô¿ï³æ*/
+.btn:hover {
+    background-color: #FFF;
+    color: #333;
+}
+
+.downlist {
+    display: block;
+    float: right;
+}
+/*¦¬ÂÃ·R¤ß*/
+.card-title svg {
+    color: red;
+    float: right;
+    position: relative;
+}
+/*µû»ù¬P¬P*/
+.star {
+    color: #26bec9;
+}
+
+.card-footer {
+    vertical-align: bottom;
+    background-color: #fff;
+    border: none;
+    padding-top: 65px;
+}
+
