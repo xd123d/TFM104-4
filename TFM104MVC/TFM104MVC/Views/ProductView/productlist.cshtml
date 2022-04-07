@@ -215,11 +215,11 @@
                 </div>
             </div>
             <!--商品單項-->
-            <div id="app" class="mb-3" v-for="item in productList">
+            <div id="app" v-for="(item, index) in productList.slice(pageStart, pageStart + countOfPage)" :key="index">
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <a href="#img" target="_blank" rel="noopener">
+                            <a v-bind:href=" '/Vproducts/products/ '+ item.id " target="_blank" rel="noopener">
                                 <img v-bind:src="item.productPictures[0].url"
                                      class="w-100 img-fluid rounded-start product-pic" alt="...">
                             </a>
@@ -290,19 +290,36 @@
 
 
             <!--商品分頁-->
+            @*<div class="mt-5">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination d-flex justify-content-center">
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item"><a class="page-link" href="#">></a></li>
+                        </ul>
+                    </nav>
+                </div>*@
             <div class="mt-5">
                 <nav aria-label="Page navigation example">
+                    @*<div class="pagination">*@
                     <ul class="pagination d-flex justify-content-center">
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                        <li class="page-item"><a class="page-link" href="#">></a></li>
+                        <li class="page-item" v-bind:class="{'disabled': (currPage === 1)}" @*currPage=1停止下一頁*@
+                            @@click.prevent="setPage(currPage-1)"><a class="page-link" href="#">&#60 Prev</a></li>
+                        @*現在頁面+1*@
+                        <li class="page-item" v-for="n in totalPage" v-bind:class="{'active': (currPage === (n))}"
+                            @@click.prevent="setPage(n)"><a class="page-link" href="#">{{n}}</a></li>
+                        <li class="page-item" v-bind:class="{'disabled': (currPage === totalPage)}"
+                            @@click.prevent="setPage(currPage+1)"><a class="page-link" href="#">Next></a></li>
                     </ul>
                 </nav>
+                @*</div>*@
             </div>
+
+
         </div>
     </div>
     <div class="row row-cols-3">
@@ -322,7 +339,23 @@
             TraveldaysValue: '',
             TriptypeValue: '',
 
+
+            countOfPage: 1,// 幾個一頁
+            currPage: 1,
+
+
         },
+        computed: {
+
+
+            pageStart: function () {
+                return (this.currPage - 1) * this.countOfPage;
+            },
+            totalPage: function () {
+                return Math.ceil(this.productList.length / this.countOfPage);
+            }
+        },
+
         mounted: function () {
             var self = this;
             axios.get("/api/products").then(function (res) {
@@ -331,7 +364,6 @@
         },
 
         methods: {
-
             regionClick: function () {
                 var self = this;
                 var regionValue = self.regionValue;
@@ -373,8 +405,13 @@
                     /*  }*/
                 })
                 // }
-            }
-
+            },
+            setPage: function (idx) {//設定頁面
+                if (idx <= 0 || idx > this.totalPage) {
+                    return;
+                }
+                this.currPage = idx;
+            },
         },
         filters: {
             ellipsis(value) {
