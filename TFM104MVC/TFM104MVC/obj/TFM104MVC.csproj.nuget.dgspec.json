@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tibame_T14\\Downloads\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {}
+    "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tibame_T14\\Downloads\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {
+    "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tibame_T14\\Downloads\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
+        "projectUniqueName": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
         "projectName": "TFM104MVC",
-        "projectPath": "C:\\Users\\Tibame_T14\\Downloads\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
+        "projectPath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
         "packagesPath": "C:\\Users\\Tibame_T14\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tibame_T14\\Downloads\\TFM104MVC\\TFM104MVC\\obj\\",
+        "outputPath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tibame_T14\\AppData\\Roaming\\NuGet\\NuGet.Config",
