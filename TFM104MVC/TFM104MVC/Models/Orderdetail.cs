@@ -21,14 +21,14 @@ namespace TFM104MVC.Models
         //外來鍵商品id
         [ForeignKey("Product")]
         public Guid ProductId { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         //[Key]
         //[Column(Order = 2)]
         //外來鍵訂單id
         [ForeignKey("Order")]
         public int OrderId { get; set; }
-        public Order Order { get; set; }
+        public virtual Order Order { get; set; }
 
         //與商品評價 一對一關係
         [ForeignKey("CustomerRating")]
