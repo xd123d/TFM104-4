@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "首頁";
+}
+
+<!--自幹css-->
+<link rel="stylesheet" href="/css/homeIndex.css" type="text/css">
+
+<!--首頁主體-->
+<section class="home-banner container-fluid w-100 g-0 ">
+        <div class="d-flex justify-content-center">
+            <div class="home-banner_content" >
+                <div class="uusearch">
+                    <h1 class="title">全台灣最棒的旅遊體驗</h1>
+                    <h5 class="sub-title">帶你深入探索有趣又獨特的旅遊體驗行程</h5>
+                </div>
+                <nav class="navbar">
+                    <form class="d-flex" style="justify-content: center;align-items: center;">
+                        <input class="form-control me-2" type="search" placeholder="輸入目的地、景點、體驗行程或活動名稱..." aria-label="Search">
+                        <button class="btn btn-primary" type="submit" style="background-color: darkturquoise;border-color: darkturquoise;">Search</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+
+
+
+</section>
+<!--暫時的東西-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a class="navbar-brand" asp-area="" asp-controller="ProductView" asp-action="productlist">
+                    這裡是暫時放商品列表連結
+                </a>
+            </div>
+            <div class="col">
+                <a class="navbar-brand" asp-area="" asp-controller="ProductView" asp-action="product">
+                    這裡暫時放單一商品連結
+                </a>
+            </div>
+           
+            <div class="col">
+                <a class="navbar-brand"  asp-area="" asp-controller="Purchase" asp-action="booking">
+                    這裡暫時放訂購頁連結
+                </a>
+            </div>
+            <div class="col">
+                <a class="navbar-brand" asp-area="" asp-controller="Order" asp-action="Manage">
+                    這裡暫時放訂單管理
+                </a>
+            </div>
+            <div class="col">
+                <a class="navbar-brand" asp-area="" asp-controller="Order" asp-action="Detail">
+                    這裡暫時放訂單明細
+                </a>
+            </div>
+            <div class="col">
+                <a class="navbar-brand" asp-area="" asp-controller="Order" asp-action="Edit">
+                    這裡暫時放訂單修改
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

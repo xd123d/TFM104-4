@@ -1,0 +1,31 @@
+
+/*.container {
+    position: relative;
+}*/
+/*banner*/
+.home-banner {
+    background-image: url(https://images.plurk.com/kzwIDnkfrwDlt3gk4cVV7.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.home-banner_content {
+    width: 1200px;
+    height: 300px;
+    text-align: center;
+    margin-top: 75px;
+/*    border: 1px solid #ff0000;
+*/}
+
+.title {
+    color: #FFF;
+}
+
+.sub-title {
+    color: #FFF;
+}
+
+.navbar {
+    justify-content: center;
+    align-items: center;
+}
