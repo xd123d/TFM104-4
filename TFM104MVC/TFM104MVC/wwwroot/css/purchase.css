@@ -1,22 +1,25 @@
 html,
 body {
-  font-family: "Lato", "Noto Sans TC", sans-serif;
-  /* outline: 3px solid tomato; */
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: .5px;
-  padding: 0;
-  color: #333333;
-  /* background-color: #f6f7f8; */
-  background-color: #f5f5f5;
-  overflow-x: hidden;
-  /* box-sizing: border-box; */
+    font-family: "Lato", "Noto Sans TC", sans-serif;
+    /* outline: 3px solid tomato; */
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding: 0;
+    color: #333333;
+    /* background-color: #f6f7f8; */
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    /* box-sizing: border-box; */
 }
 
-body { padding-top: 70px; }
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 
-.container{
-max-width: 800px;
+.container {
+    max-width: 800px;
 }
 
 /* .navbar-collapse{
@@ -28,19 +31,19 @@ max-width: 800px;
     outline: 3px solid tomato;
 
 }*/
-.nav-item{
-    margin-left: 1rem ;
+.nav-item {
+    margin-left: 1rem;
     align-items: center;
     /* outline: 3px solid tomato; */
-} 
+}
 
-.shop-cart{
+.shop-cart {
     margin-top: 5px;
     width: 20px;
     height: 20px;
 }
 
-.login-provider-button-circle{
+.login-provider-button-circle {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -49,21 +52,47 @@ max-width: 800px;
     /* border: none; */
 }
 
-.shoppingCart{
+.shoppingCart {
     width: 50%;
-
 }
 
 
 /*各看板設定*/
-.board{
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 6px;
-  background: #fff;
+.board {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
 }
 /* 
 .product-pic{
   width:80px;
   height: 80px;
 } */
+
+/*連結色彩設定*/
+a, a:hover {
+    text-decoration: none;
+    color: #26bec9;
+    cursor: pointer;
+    background-color: transparent;
+    transition: .25s;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/*立即訂購按鈕設定*/
+
+.btn-info.active, .btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover, .btn-info:focus, .btn-info:hover, .open .dropdown-toggle.btn-info, .open > .dropdown-toggle.btn-info.focus, .open > .dropdown-toggle.btn-info:focus, .open > .dropdown-toggle.btn-info:hover {
+    color: #fff;
+    background-color: #22a7aa;
+    border-color: #22a7aa;
+}
+
+.btn-primary, .btn-info {
+    color: #fff;
+    background-color: #26bec9;
+    border-color: #26bec9;
+}
