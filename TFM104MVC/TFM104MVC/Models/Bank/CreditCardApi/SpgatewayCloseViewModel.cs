@@ -1,4 +1,4 @@
-﻿namespace TFM104MVC.Controllers
+﻿namespace TFM104MVC.Models.Bank.CreditCardApi
 {
     /// <summary>
     /// [智付通金流]介接資料模型(Deposit Reversal、Refund、Refund Reversal)

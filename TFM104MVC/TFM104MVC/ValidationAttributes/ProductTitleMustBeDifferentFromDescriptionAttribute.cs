@@ -7,7 +7,7 @@ using TFM104MVC.Dtos;
 
 namespace TFM104MVC.ValidationAttributes
 {
-    public class ProductTitleMustBeDifferentFromDescriptionAttribute:ValidationAttribute
+    public class ProductTitleMustBeDifferentFromDescriptionAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
@@ -19,8 +19,4 @@ namespace TFM104MVC.ValidationAttributes
             return ValidationResult.Success;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> unity1
