@@ -308,12 +308,15 @@
                     @*<div class="pagination">*@
                     <ul class="pagination d-flex justify-content-center">
                         <!--<li class="page-item" v-bind:class="{'disabled': (currPage === 1)}"--> @*currPage=1停止下一頁*@
-                            <!--@@click.prevent="setPage(currPage-1)"><a class="page-link" href="#">&#60 Prev</a></li>-->
+                        <!--@@click.prevent="setPage(currPage-1)"><a class="page-link" href="#">&#60 Prev</a></li>-->
                         @*現在頁面+1*@
                         <li class="page-item" v-for="n in totalPage" v-bind:class="{'active': (currPage === (n))}"
-                            @@click.prevent="setPage(n)"><a class="page-link" href="#">{{n}}</a></li>
+                            @@click.prevent="setPage(n)">
+                        <a class="page-link" href="#">{{n}}</a></li>
                         <li class="page-item" v-bind:class="{'disabled': (currPage === totalPage)}"
-                            @@click.prevent="setPage(currPage+1)"><a class="page-link" href="#">></a></li>
+                            @@click.prevent="setPage(currPage+1)">
+                            <a class="page-link" href="#" >></a>
+                        </li>
                     </ul>
                 </nav>
                 @*</div>*@
@@ -341,7 +344,7 @@
 
 
             countOfPage: 1,// 幾個一頁
-            currPage: 1,
+            currPage: 1,//初始頁
 
 
         },

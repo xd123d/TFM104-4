@@ -4,28 +4,41 @@
 
 <link rel="stylesheet" href="/css/product.css" type="text/css">
 
-<section id="app">
+<section id="productVue">
     <!--商品輪播區塊-->
     <div class="container mt-3">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+
+                <template v-for="(img,num) in pic">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                            aria-current="true"   v-bind:aria-label=" 'Slide'+ num"v-if="num == 0"></button>
+
+                    <button type="button" data-bs-target="#carouselExampleIndicators" v-bind:data-bs-slide-to="num"
+                          v-bind:aria-label=" 'Slide'+ num" v-else></button>
+                </template>
+                    @*<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>*@
+                    @*<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>*@
+                    @*<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>*@
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/750/350?random=1" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/750/350?random=13" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/750/350?random=7" class="d-block w-100" alt="...">
-                </div>
+                <template v-for="(img,num) in pic">
+                    <div class="carousel-item active"  v-if="num == 0">
+                        <img v-bind:src="img.url" class="d-block w-100" alt="...">
+                        @*<img v-bind:src="img.url" class="d-block w-100" alt="...">*@
+                    </div>
+                    <div class="carousel-item" v-else>
+                        <img v-bind:src="img.url" class="d-block w-100" alt="...">
+                    </div>
+                </template>
+                @*<div class="carousel-item">
+                        <img src="https://picsum.photos/750/350?random=7" class="d-block w-100" alt="...">
+                    </div>*@
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
@@ -59,7 +72,7 @@
                 <div class="item">
                     <!--商品標題-->
                     <h2 id="product">
-                        我是商品標題：地點地點｜主標題｜商品特點短述
+                        {{product.title}}
                     </h2>
                     <!--評價&購買&收藏-->
                     <div class="product-layout-list mt-3">
@@ -96,20 +109,7 @@
                     <!--商品敘述-->
                     <div class="product-content">
                         <p class="lh-base">
-                            我是商品敘述
-
-                            商品敘述內容
-                            一段乍看之下像是文章，但仔細一瞧全無道理的文字組合。
-
-                            給做版面設計的人在版面上塞入一些文字，觀察版面填入文字之後的效果。
-
-                            產生沒有意義的文字組合（文章？），供排版時填充版面用，但不會因為字義而左右版型的判斷。文字、標點符號出現機率大致符合台灣文章習慣。聽說很多學排版的都會用這個工具。
-
-                            八啦巴拉
-                            機哩嘎啦
-                            吱吱喳喳
-                            機哩咕嚕
-                            呱呱呱呱
+                            {{product.description}}
                         </p>
                     </div>
 
@@ -173,8 +173,8 @@
             <div class="col-12 col-md-4">
                 <div class="order-block my-3">
                     <div class="product-prcie d-flex gap-1 m-3">
-                        <span class="fs-3 fw-bold">TWD XXX</span>
-                        <span class="text-muted origin-price text-decoration-line-through">TWD X,XXX</span>
+                        <span class="fs-3 fw-bold">TWD {{product.price}}</span>
+                        <span class="text-muted origin-price text-decoration-line-through">TWD {{product.price}}</span>
                     </div>
                     <div class="callout m-3">
                         <span class="text-warning">
@@ -186,6 +186,9 @@
                             </small>
                         </span>
                     </div>
+
+
+
                     <div class="m-3">
                         <div class="d-grid gap-2">
                             <button class="btn btn-primary" type="button">立即下訂</button>
@@ -232,12 +235,8 @@
                                     TWD X,XXXX/每人
                                 </div>
                                 <!--商品數量選擇器-->
-                                <div class="counter">
-                                    <div class="d-flex align-items-center  qty gap-3">
-                                        <span class="material-icons-sharp qtyminus rounded-circle " v-on:click="changeIndex(-1)" >remove</span>
-                                         <span class="number ">{{index}}</span>
-                                          <span class="material-icons-sharp qtyplus rounded-circle " v-on:click="changeIndex(+1)">add</span>
-                                    </div>
+                                <div class="text-info">
+                                    數量選擇器
                                 </div>
                             </div>
                             <hr class="text-muted">
@@ -278,7 +277,7 @@
     <!--評價區塊-->
     <div class="container mt-5" id="Review">
         <div class="row">
-            <div class="col-8 col-md-9">
+            <div class="col-9">
                 <div class="container mx-1">
                     <!--評價標題-->
                     <div class="d-flex justify-content-between mb-2">
@@ -454,7 +453,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 col-md-3">
+            <div class="col-3">
                 <div class="item">
                     <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
                         <a class="navbar-brand mb-3" href="#">快速目錄</a>
@@ -530,7 +529,7 @@
                                             <!--價格-->
                                             <div class="product-price gap-3">
                                                 <div>
-                                                    <p class="fw-bolder">TWD X,XXX </p>
+                                                    <p class="fw-bolder">TWDXXXX </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -723,6 +722,7 @@
                                         <!--產品資訊：評價&熱門程度&價格-->
                                         <div class="product-footer d-flex gap-1 ">
                                             <!--價格-->
+
                                             <div class="product-price gap-3">
                                                 <div>
                                                     <p class="fw-bolder">TWD X,XXX </p>
@@ -746,11 +746,11 @@
                 <div class="price-preview mb-2" id="">
                     <div class="price-info">
                         <span class="fw-bold fs-5 text-info">
-                            TWD XXX
+                            TWD {{product.price}}
                         </span>
                         <span class="text-muted text-decoration-line-through">
                             <small>
-                                TWD X,XXX
+                                TWD {{product.price}}
                             </small>
                         </span>
                     </div>
@@ -789,25 +789,38 @@
 
         </div>
     </nav>
+
 </section>
 
+
 <script>
-    var app =new Vue({
-        el:'#app',
-        data:{
-            index:0,
+    var getUrlString = location.pathname; //抓網頁路徑部分(/ProductView/product/XXXXX)
+    var pid = getUrlString.replace("/ProductView/product/", " ");//字元處理 移除"/ProductView/product/" 字串
+
+    
+    var app = new Vue({
+        el: '#productVue',
+        data: {
+            product: [],
+            pic: [],
+
         },
-        methods:{
-            changeIndex(change){
+        computed: {
 
-                this.index+=change;
-                //控管範圍  TODO抓取資料庫數量
-                if(this.index<0){
-                    this.index=0;
-                }
+            totalPicBtn: () => {
 
+                return this.pic.length / this.btn;
             }
-        }
 
-    })
+        },
+        mounted: function () {
+            var self = this;
+            axios.get("/api/products/" + pid).then(function (res) {
+                self.product = res.data;
+                self.pic = res.data.productPictures;
+
+                console.log(self.pic);
+            })
+        }
+    });
 </script>
