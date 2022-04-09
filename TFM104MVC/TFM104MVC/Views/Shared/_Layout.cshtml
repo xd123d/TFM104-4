@@ -40,6 +40,7 @@
 
 </head>
 <body>
+    <!--沒登入的畫面-->
     <header>
         <div class="container">
             <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
@@ -91,7 +92,7 @@
             <div class="list-group-item list-group-item-action d-flex justify-content-between">
                 <span>共0件商品</span>
                 <a class="btn btn-primary" asp-area="" asp-controller="Purchase" asp-action="cart">
-                        查看購物車
+                    查看購物車
                 </a>
             </div>
         </div>
@@ -312,6 +313,123 @@
             </div>
             </div>
             </nav>*@
+    </header>
+
+    <!--登入的畫面-->
+    <header>
+        <div class="container">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/pic/kkday_logo_final.svg"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="探索全台行程活動" aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                        </form>
+                        <div class=" d-flex align-items-center ">
+                            <ul class="navbar-nav mb-2 mb-lg-0 d-flex gap-3 ali">
+                                <!-- 購物車 -->
+                                <li class="nav-item dropdown">
+                                    <div class="shop-cart">
+                                        <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasShopCart" role="button" aria-controls="offcanvasUser">
+                                            <i class="bi bi-cart2 fs-5"></i>
+                                        </a>
+                                    </div>
+
+                                </li>
+                                <!-- 登入註冊 -->
+                                <li class="nav-item">
+                                    <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasUser" role="button" aria-controls="offcanvasUser">
+                                        <img src="https://fakeimg.pl/50/" class="rounded-circle img-fluid">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 購物車功能 -->
+        <!--NavShopCart-empty-->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasShopCart" aria-labelledby="offcanvasShopCart">
+            <div class="list-group my-3">
+                <div class="mx-auto d-block">
+                    <img src="https://cdn.kkday.com/pc-web/assets/img/empty_state/shopping_cart.svg" width="120" height="120">
+                </div>
+                <p class="text-muted text-center fs-6">您的購物車是空的</p>
+            </div>
+            <div class="list-group-item list-group-item-action d-flex justify-content-between">
+                <span>共0件商品</span>
+                <a class="btn btn-primary" asp-area="" asp-controller="Purchase" asp-action="cart">
+                    查看購物車
+                </a>
+            </div>
+        </div>
+        <div class="navUser offcanvas offcanvas-end" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUser">
+            <div class="list-group">
+                <div class="list-group-item list-group-item-action d-flex justify-content-between">
+                    <div class="">
+                        <a href="#">
+                            <img src="https://fakeimg.pl/50/" class="rounded-circle img-fluid">
+                            <span class="offcanvas-title " id="offcanvasUser">
+                                登入會員名</h5>
+                                <i class="bi bi-gear"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!--登入後使用者-->
+                <div class="list-group-item list-group-item-action">
+                    <a href="#" class="d-flex gap-2" aria-current="true">
+                        <i class="bi bi-ticket-perforated fs-5"></i>
+                        <span>
+                            KKday折扣券
+                        </span>
+                    </a>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <a href="#" class="d-flex gap-2">
+                        <i class="bi bi-exclamation-circle-fill fs-5"></i>
+                        <span class="">
+                            KKday Points
+                        </span>
+                    </a>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <a href="#" class="d-flex gap-2">
+                        <i class="bi bi-card-list fs-5"></i>
+                        <span>
+                            訂單管理
+                        </span>
+                    </a>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <a href="#" class="d-flex gap-2">
+                        <i class="bi bi-heart"></i>
+                        <span>
+                            我的收藏
+                        </span>
+                    </a>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                    <a href="#">
+                        <p class="text-center">
+                            登出
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="container-fluid g-0">

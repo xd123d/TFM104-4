@@ -60,7 +60,7 @@
                                     </label>
                                 </div>
                                 <div>
-                                    <input type="text" name="LastName"  placeholder="例：蘇" class="form-control">
+                                    <input type="text" name="LastName" placeholder="例：蘇" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input class="form-control" name="Phone"  type="tel" placeholder="請輸入聯絡電話">
+                                <input class="form-control" name="Phone" type="tel" placeholder="請輸入聯絡電話">
                             </div>
                         </div>
                         <!--電子郵件信箱-->
@@ -89,7 +89,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input class="form-control" name="Email"  type="email" placeholder="請輸入常用電子郵件信箱">
+                                <input class="form-control" name="Email" type="email" placeholder="請輸入常用電子郵件信箱">
                             </div>
                         </div>
                     </div>
@@ -191,18 +191,52 @@
                     <hr class="text-muted">
                     <!--多種付款方式-->
                     <div class="mb-3">
+                        <!--LINE Pay-->
+                        @*<div class="form-check">
+            <input class="form-check-input" type="radio" name="PayMethod" id="linePay" value="linePay">
+            <label class="form-check-label" for="linePay">
+                <div class="d-flex gap-5">
+                    <div>
+                        <span>
+                            LINE Pay
+                        </span>
+                    </div>
+                    <div>
+                        <img src="https://cdn.kkday.com/pc-web/assets/img/payment/ic_linepay_2.svg
+                    " alt="">
+                    </div>
+                </div>
+            </label>
+        </div>*@
+                        <!--Apple Pay-->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="PayMethod" id="linePay" value="linePay">
-                            <label class="form-check-label" for="linePay">
+                            <input class="form-check-input" type="radio" name="PayMethod" id="ApplePay" value="ApplePay">
+                            <label class="form-check-label" for="ApplePay">
                                 <div class="d-flex gap-5">
                                     <div>
                                         <span>
-                                            LINE Pay
+                                            Apple Pay
                                         </span>
                                     </div>
                                     <div>
-                                        <img src="https://cdn.kkday.com/pc-web/assets/img/payment/ic_linepay_2.svg
-                                    " alt="">
+                                        <img src="https://cdn.kkday.com/pc-web/assets/img/payment/ic_linepay_2.svg">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <hr class="text-muted">
+                        <!--Google Pay-->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="PayMethod" id="GooglePay" value="GooglePay">
+                            <label class="form-check-label" for="GooglePay">
+                                <div class="d-flex gap-5">
+                                    <div>
+                                        <span>
+                                            Google Pay
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <img src="https://cdn.kkday.com/pc-web/assets/img/payment/ic_linepay_2.svg">
                                     </div>
                                 </div>
                             </label>
