@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "S+mzdsmmgC4AvSAsviTQpuGu29NxuTNWMTWzLcdetnTwBXIBcs9N+1EyZl7IK3nxFO0lvosfclIIqynyl24c4A==",
+  "dgSpecHash": "mcoxNtpKAzj8LnUenYoJWkstx+YjSmQaFCtzbrVoP7tVb16P41yntbAH0YWh1cvKvO36PxXvFVgo0kYEMeyNSg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tibame_T14\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Tibame_T14\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Tibame_T14\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Tibame_T14\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\5.0.13\\microsoft.aspnetcore.authentication.facebook.5.0.13.nupkg.sha512",
     "C:\\Users\\Tibame_T14\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.15\\microsoft.aspnetcore.authentication.jwtbearer.5.0.15.nupkg.sha512",
     "C:\\Users\\Tibame_T14\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Tibame_T14\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.13\\microsoft.aspnetcore.mvc.razor.extensions.5.0.13.nupkg.sha512",

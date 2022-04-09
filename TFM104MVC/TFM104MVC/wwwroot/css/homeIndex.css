@@ -1,44 +1,9 @@
-
-/*.container {
-    position: relative;
-}*/
-/*banner*/
-.home-banner {
-    background-image: url(https://images.plurk.com/kzwIDnkfrwDlt3gk4cVV7.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.home-banner_content {
-    width: 1200px;
-    height: 300px;
-    text-align: center;
-    margin-top: 75px;
-/*    border: 1px solid #ff0000;
-*/}
-
-.title {
-    color: #FFF;
-}
-
-.sub-title {
-    color: #FFF;
-}
-
-.navbar {
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    position: relative;
-}
 /*banner*/
 .home-banner {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 27vw;
+    height: 55vh;
     width: 100vw;
 }
 
@@ -58,29 +23,18 @@
     font-size: 1.2rem;
 }
 
-.title_2 {
-    color: black;
-}
 /*卡片*/
 .card_news {
     width: 375px;
     height: 200px;
-    margin-left: 5px;
 }
 
-.card3_link span {
-    color: #000;
-}
-
-.card3_title {
-    color: dimgray;
-}
 
 .card3_img {
     background-size: cover;
-    margin: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgb(76, 75, 75);
+    /*margin: 5px;*/
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgb(76, 75, 75);
 }
 /*朝右按鈕*/
 .new_btn {
@@ -116,18 +70,69 @@
     .new2_btn:hover {
         color: black;
     }
-/*頁尾*/
 
-#footer {
-    background-color: rgba(169, 169, 169, 0.699);
-    text-align: center;
+/*設定 商品區塊*/
+
+.product-card-image {
+    height: 150px;
+    background-color: #eaeaea;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 6px;
+    -webkit-transition: -webkit-transform .8s ease 0s,-webkit-transform .8s ease 0s;
+    transition: -webkit-transform .8s ease 0s,-webkit-transform .8s ease 0s;
+    transition: transform .8s ease 0s,transform .8s ease 0s;
+    transition: transform .8s ease 0s,transform .8s ease 0s,-webkit-transform .8s ease 0s,-webkit-transform .8s ease 0s;
+    z-index: 1;
+}
+
+.product-info {
+    font-size: 10px;
+}
+
+.row a {
+    text-decoration: none;
+}
+
+
+/*頁尾edm*/
+
+.tip {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+    .tip a {
+        color: #999;
+    }
+
+        .tip a:hover {
+            color: gray;
+            text-decoration: underline;
+        }
+
+/*頁尾 */
+
+.footer-item {
+    background-color: dimgray;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10%;
+    padding-bottom: 3%;
+    /*    text-align: center;
+*/
 }
 
 .footer-links {
+    /*    margin-left: 5%;
+    margin-right: 5%;
     max-width: 900px;
     max-height: 250px;
     justify-content: baseline;
-    text-align: right;
+    text-align: left;*/
 }
 
 .footer-list {
@@ -146,12 +151,13 @@
 
 h4 {
     font-size: 1.2rem;
-    color: rgb(60, 60, 60);
+    color: gray;
     margin-top: 20px;
 }
 
-#footer-follows ul li {
+.footer-follows ul li {
     white-space: nowrap;
     text-align: right;
     display: inline-block;
+    margin-right: 3%;
 }

@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="/css/product.css" type="text/css">
 
-<section>
+<section id="app">
     <!--商品輪播區塊-->
     <div class="container mt-3">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -232,8 +232,12 @@
                                     TWD X,XXXX/每人
                                 </div>
                                 <!--商品數量選擇器-->
-                                <div class="text-info">
-                                    數量選擇器
+                                <div class="counter">
+                                    <div class="d-flex align-items-center  qty gap-3">
+                                        <span class="material-icons-sharp qtyminus rounded-circle " v-on:click="changeIndex(-1)" >remove</span>
+                                         <span class="number ">{{index}}</span>
+                                          <span class="material-icons-sharp qtyplus rounded-circle " v-on:click="changeIndex(+1)">add</span>
+                                    </div>
                                 </div>
                             </div>
                             <hr class="text-muted">
@@ -786,3 +790,24 @@
         </div>
     </nav>
 </section>
+
+<script>
+    var app =new Vue({
+        el:'#app',
+        data:{
+            index:0,
+        },
+        methods:{
+            changeIndex(change){
+
+                this.index+=change;
+                //控管範圍  TODO抓取資料庫數量
+                if(this.index<0){
+                    this.index=0;
+                }
+
+            }
+        }
+
+    })
+</script>
