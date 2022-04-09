@@ -1,4 +1,4 @@
-﻿namespace TFM104MVC.Controllers
+﻿namespace TFM104MVC.Models
 {
     /// <summary>執行結果基元(泛型)</summary>
     public class Atom<T>

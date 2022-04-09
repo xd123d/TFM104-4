@@ -68,7 +68,7 @@ namespace TFM104MVC.Controllers
             }
             catch (Exception ex)
             {
-                LogUtil.WriteLog(ex);
+                //LogUtil.WriteLog(ex);
             }
 
             return result;

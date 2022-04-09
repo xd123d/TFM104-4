@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,7 +13,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using TFM104MVC.Models;
-using TFM104MVC.Models.Bank.Util;
 
 namespace TFM104MVC.Controllers
 {
@@ -49,13 +49,16 @@ namespace TFM104MVC.Controllers
         /// <param name="amount">訂單金額</param>
         /// <param name="payType">請款類型</param>
         /// <returns></returns>
-        [HttpPost]
-        public ActionResult SpgatewayPayBill(string ordernumber, int amount, string payType)
-        {
-            string version = "1.5";
+        /// 
 
-            // 目前時間轉換 +08:00, 防止傳入時間或Server時間時區不同造成錯誤
-            DateTimeOffset taipeiStandardTimeOffset = DateTimeOffset.Now.ToOffset(new TimeSpan(8, 0, 0));
+        //金流只在意付款方式、價格、訂單編號
+        [HttpPost]
+        public async Task SpgatewayPayBillAsync(string ordernumber, int amount, string PayMethod)
+        {
+            string version = "2.0";
+            ordernumber = "111";
+            amount = 500;
+            
 
             TradeInfo tradeInfo = new TradeInfo()
             {
@@ -64,7 +67,8 @@ namespace TFM104MVC.Controllers
                 // * 回傳格式
                 RespondType = "String",
                 // * TimeStamp
-                TimeStamp = taipeiStandardTimeOffset.ToUnixTimeSeconds().ToString(),
+                // 目前時間轉換 +08:00, 防止傳入時間或Server時間時區不同造成錯誤
+                TimeStamp = DateTimeOffset.Now.ToOffset(new TimeSpan(8, 0, 0)).ToUnixTimeSeconds().ToString(),
                 // * 串接程式版本
                 Version = version,
                 // * 商店訂單編號
@@ -77,7 +81,8 @@ namespace TFM104MVC.Controllers
                 // 繳費有效期限(適用於非即時交易)
                 ExpireDate = null,
                 // 支付完成 返回商店網址
-                ReturnURL = _bankInfoModel.ReturnURL,
+                //ReturnURL = _bankInfoModel.ReturnURL,
+                ReturnURL = null,
                 // 支付通知網址
                 NotifyURL = _bankInfoModel.NotifyURL,
                 // 商店取號網址
@@ -99,34 +104,17 @@ namespace TFM104MVC.Controllers
                 // 超商代碼繳費啟用(1=啟用、0或者未有此參數，即代表不開啟)(當該筆訂單金額小於 30 元或超過 2 萬元時，即使此參數設定為啟用，MPG 付款頁面仍不會顯示此支付方式選項。)
                 CVS = null,
                 // 超商條碼繳費啟用(1=啟用、0或者未有此參數，即代表不開啟)(當該筆訂單金額小於 20 元或超過 4 萬元時，即使此參數設定為啟用，MPG 付款頁面仍不會顯示此支付方式選項。)
-                BARCODE = null
+                BARCODE = null,
+                LINEPAY= null
             };
 
-            if (string.Equals(payType, "CREDIT"))
+            if (PayMethod == "creditcard")
             {
                 tradeInfo.CREDIT = 1;
-            }
-            else if (string.Equals(payType, "WEBATM"))
+            }                
+            else if (PayMethod == "linePay")
             {
-                tradeInfo.WEBATM = 1;
-            }
-            else if (string.Equals(payType, "VACC"))
-            {
-                // 設定繳費截止日期
-                tradeInfo.ExpireDate = taipeiStandardTimeOffset.AddDays(1).ToString("yyyyMMdd");
-                tradeInfo.VACC = 1;
-            }
-            else if (string.Equals(payType, "CVS"))
-            {
-                // 設定繳費截止日期
-                tradeInfo.ExpireDate = taipeiStandardTimeOffset.AddDays(1).ToString("yyyyMMdd");
-                tradeInfo.CVS = 1;
-            }
-            else if (string.Equals(payType, "BARCODE"))
-            {
-                // 設定繳費截止日期
-                tradeInfo.ExpireDate = taipeiStandardTimeOffset.AddDays(1).ToString("yyyyMMdd");
-                tradeInfo.BARCODE = 1;
+                tradeInfo.LINEPAY = 1;
             }
 
             Atom<string> result = new Atom<string>()
@@ -144,6 +132,7 @@ namespace TFM104MVC.Controllers
             List<KeyValuePair<string, string>> tradeData = LambdaUtil.ModelToKeyValuePairList<TradeInfo>(tradeInfo);
             // 將List<KeyValuePair<string, string>> 轉換為 key1=Value1&key2=Value2&key3=Value3...
             var tradeQueryPara = string.Join("&", tradeData.Select(x => $"{x.Key}={x.Value}"));
+            tradeQueryPara = tradeQueryPara + "&SAMSUNGPAY=1&ANDROIDPAY=1";
             // AES 加密
             inputModel.TradeInfo = CryptoUtil.EncryptAESHex(tradeQueryPara, _bankInfoModel.HashKey, _bankInfoModel.HashIV);
             // SHA256 加密
@@ -151,8 +140,6 @@ namespace TFM104MVC.Controllers
 
             // 將model 轉換為List<KeyValuePair<string, string>>, null值不轉
             List<KeyValuePair<string, string>> postData = LambdaUtil.ModelToKeyValuePairList<SpgatewayInputModel>(inputModel);
-
-            Response.Clear();
 
             StringBuilder s = new StringBuilder();
             s.Append("<html>");
@@ -162,140 +149,68 @@ namespace TFM104MVC.Controllers
             {
                 s.AppendFormat("<input type='hidden' name='{0}' value='{1}' />", item.Key, item.Value);
             }
-
             s.Append("</form></body></html>");
-            Response.WriteAsync(s.ToString());
-            Response.End();
 
-            return Content(string.Empty);
 
+            Response.ContentType = "text/html";
+            //using (var sw = new StreamWriter(Response.Body))
+            //{
+            //   await sw.WriteAsync(s.ToString());
+            //}
+            var bytes = Encoding.UTF8.GetBytes(s.ToString());
+            await Response.Body.WriteAsync(bytes, 0, bytes.Length);
         }
 
         /// <summary>
         /// [智付通]金流介接(結果: 支付完成 返回商店網址)
         /// </summary>
-        [HttpPost]
-        public ActionResult SpgatewayReturn()
-        {
-            Request.LogFormData("SpgatewayReturn(支付完成)");
+        //[HttpPost]
+        //public ActionResult SpgatewayReturn()
+        //{
+        //    Request.LogFormData("SpgatewayReturn(支付完成)");
 
-            // Status 回傳狀態 
-            // MerchantID 回傳訊息
-            // TradeInfo 交易資料AES 加密
-            // TradeSha 交易資料SHA256 加密
-            // Version 串接程式版本
-            NameValueCollection collection = Request.Form;
+        //    // Status 回傳狀態 
+        //    // MerchantID 回傳訊息
+        //    // TradeInfo 交易資料AES 加密
+        //    // TradeSha 交易資料SHA256 加密
+        //    // Version 串接程式版本
+        //    NameValueCollection collection = Request.Form;
 
-            if (collection["MerchantID"] != null && string.Equals(collection["MerchantID"], _bankInfoModel.MerchantID) &&
-                collection["TradeInfo"] != null && string.Equals(collection["TradeSha"], CryptoUtil.EncryptSHA256($"HashKey={_bankInfoModel.HashKey}&{collection["TradeInfo"]}&HashIV={_bankInfoModel.HashIV}")))
-            {
-                var decryptTradeInfo = CryptoUtil.DecryptAESHex(collection["TradeInfo"], _bankInfoModel.HashKey, _bankInfoModel.HashIV);
+        //    if (collection["MerchantID"] != null && string.Equals(collection["MerchantID"], _bankInfoModel.MerchantID) &&
+        //        collection["TradeInfo"] != null && string.Equals(collection["TradeSha"], CryptoUtil.EncryptSHA256($"HashKey={_bankInfoModel.HashKey}&{collection["TradeInfo"]}&HashIV={_bankInfoModel.HashIV}")))
+        //    {
+        //        var decryptTradeInfo = CryptoUtil.DecryptAESHex(collection["TradeInfo"], _bankInfoModel.HashKey, _bankInfoModel.HashIV);
 
-                // 取得回傳參數(ex:key1=value1&key2=value2),儲存為NameValueCollection
-                NameValueCollection decryptTradeCollection = HttpUtility.ParseQueryString(decryptTradeInfo);
-                SpgatewayOutputDataModel convertModel = LambdaUtil.DictionaryToObject<SpgatewayOutputDataModel>(decryptTradeCollection.AllKeys.ToDictionary(k => k, k => decryptTradeCollection[k]));
+        //        // 取得回傳參數(ex:key1=value1&key2=value2),儲存為NameValueCollection
+        //        NameValueCollection decryptTradeCollection = HttpUtility.ParseQueryString(decryptTradeInfo);
+        //        SpgatewayOutputDataModel convertModel = LambdaUtil.DictionaryToObject<SpgatewayOutputDataModel>(decryptTradeCollection.AllKeys.ToDictionary(k => k, k => decryptTradeCollection[k]));
 
-                LogUtil.WriteLog(JsonConvert.SerializeObject(convertModel));
+        //        LogUtil.WriteLog(JsonConvert.SerializeObject(convertModel));
 
-                // TODO 將回傳訊息寫入資料庫
+        //        // TODO 將回傳訊息寫入資料庫
 
-                return Content(JsonConvert.SerializeObject(convertModel));
-            }
-            else
-            {
-                LogUtil.WriteLog("MerchantID/TradeSha驗證錯誤");
-            }
+        //        return Content(JsonConvert.SerializeObject(convertModel));
+        //    }
+        //    else
+        //    {
+        //        LogUtil.WriteLog("MerchantID/TradeSha驗證錯誤");
+        //    }
 
-            return Content(string.Empty);
-        }
+        //    return Content(string.Empty);
+        //}
 
         /// <summary>
         /// [智付通]金流介接(結果: 支付通知網址)
         /// </summary>
-        [HttpPost]
-        public ActionResult SpgatewayNotify()
-        {
-            // 取法同SpgatewayResult
+        //[HttpPost]
+        //public ActionResult SpgatewayNotify()
+        //{
+        //    // 取法同SpgatewayResult
 
-            Request.LogFormData("SpgatewayNotify(支付通知)");
-            return Content(string.Empty);
-        }
+        //    Request.LogFormData("SpgatewayNotify(支付通知)");
+        //    return Content(string.Empty);
+        //}
 
-        /// <summary>
-        /// [智付通]金流介接(結果: 資料回傳)
-        /// </summary>
-        [HttpPost]
-        public ActionResult SpgatewayCustomer()
-        {
-            Request.LogFormData("SpgatewayCustomer(資料回傳)");
-
-            // Status 回傳狀態 
-            // MerchantID 回傳訊息
-            // TradeInfo 交易資料AES 加密
-            // TradeSha 交易資料SHA256 加密
-            // Version 串接程式版本
-            NameValueCollection collection = Request.Form;
-
-            if (collection["MerchantID"] != null && string.Equals(collection["MerchantID"], _bankInfoModel.MerchantID))
-            {
-                var decryptTradeInfo = CryptoUtil.DecryptAESHex(collection["TradeInfo"], _bankInfoModel.HashKey, _bankInfoModel.HashIV);
-
-                // 取得回傳參數(ex:key1=value1&key2=value2),儲存為NameValueCollection
-                NameValueCollection decryptTradeCollection = HttpUtility.ParseQueryString(decryptTradeInfo);
-                SpgatewayTakeNumberDataModel convertModel = LambdaUtil.DictionaryToObject<SpgatewayTakeNumberDataModel>(decryptTradeCollection.AllKeys.ToDictionary(k => k, k => decryptTradeCollection[k]));
-
-                LogUtil.WriteLog(JsonConvert.SerializeObject(convertModel));
-
-                // TODO 將回傳訊息寫入資料庫
-
-                return Content(JsonConvert.SerializeObject(convertModel));
-            }
-            else
-            {
-                LogUtil.WriteLog("MerchantID錯誤");
-            }
-
-            return Content(string.Empty);
-        }
-
-        /// <summary>
-        /// 執行HttpClient Post
-        /// </summary>
-        /// <param name="url">Post網址</param>
-        /// <param name="formContent">form參數</param>
-        /// <returns></returns>
-        private async Task<string> ExePostForm(string url, FormUrlEncodedContent formContent)
-        {
-            string responseBody = string.Empty;
-
-            try
-            {
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Clear();
-
-                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    HttpResponseMessage response = await client.PostAsync(url, formContent);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        responseBody = await response.Content.ReadAsStringAsync();
-                        // 紀錄回傳資訊
-                        LogUtil.WriteLog(responseBody);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LogUtil.WriteLog(ex);
-            }
-
-            return responseBody;
-        } // ExePostForm()
 
         /// <summary>
         /// 銀行API測試
@@ -306,115 +221,6 @@ namespace TFM104MVC.Controllers
             return View();
         }
 
-        /// <summary>
-        /// 處理智付通 Deposit Reversal、Refund、Refund Reversal交易
-        /// </summary>
-        /// <param name="model">傳入資料</param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<ActionResult> SpgatewayClose(SpgatewayCloseViewModel model)
-        {
-            LogUtil.WriteLog("SpgatewayClose");
-            LogUtil.WriteLog(JsonConvert.SerializeObject(model));
 
-            Atom result = new Atom()
-            {
-                IsSuccess = true
-            };
-
-            try
-            {
-                // 驗證資料
-                if (model == null)
-                {
-                    result.IsSuccess = false;
-                    result.Message = "Model is null";
-                }
-                else if (string.IsNullOrWhiteSpace(model.MerchantOrderNo) || string.IsNullOrWhiteSpace(model.Amt))
-                {
-                    result.IsSuccess = false;
-                    result.Message = "[商店訂單編號]、[請退款金額]為必填";
-                }
-
-                if (result.IsSuccess)
-                {
-
-                    // 目前時間轉換 +08:00, 防止傳入時間或Server時間時區不同造成錯誤
-                    DateTimeOffset taipeiStandardTimeOffset = DateTimeOffset.Now.ToOffset(new TimeSpan(8, 0, 0));
-
-                    string postUrl = _bankInfoModel.CloseUrl;
-
-                    var postData = new SpgatewayClosePostDataModel()
-                    {
-                        RespondType = "String",
-                        Version = "1.0",
-                        Amt = int.Parse(model.Amt),
-                        MerchantOrderNo = model.MerchantOrderNo,
-                        TimeStamp = taipeiStandardTimeOffset.ToUnixTimeSeconds().ToString(),
-                        IndexType = 1,
-                        TradeNo = string.Empty,
-                        CloseType = 1,
-                        Cancel = null
-                    };
-
-                    if (string.Equals(model.ExeType, "DepositReversal"))
-                    {
-                        postData.CloseType = 1;
-                        postData.Cancel = 1;
-                    }
-                    else if (string.Equals(model.ExeType, "Refund"))
-                    {
-                        postData.CloseType = 2;
-                        postData.Cancel = null;
-                    }
-                    else if (string.Equals(model.ExeType, "RefundReversal"))
-                    {
-                        postData.CloseType = 2;
-                        postData.Cancel = 1;
-                    }
-
-                    // 將model 轉換為List<KeyValuePair<string, string>>, null值不轉
-                    List<KeyValuePair<string, string>> postDataList = LambdaUtil.ModelToKeyValuePairList<SpgatewayClosePostDataModel>(postData);
-                    // 將List<KeyValuePair<string, string>> 轉換為 key1=Value1&key2=Value2&key3=Value3...
-                    var postDataPara = string.Join("&", postDataList.Select(x => $"{x.Key}={x.Value}"));
-                    var encryptData = CryptoUtil.EncryptAESHex(postDataPara, _bankInfoModel.HashKey, _bankInfoModel.HashIV);
-
-                    var postkeyValues = new List<KeyValuePair<string, string>>();
-                    postkeyValues.Add(new KeyValuePair<string, string>("MerchantID_", _bankInfoModel.MerchantID));
-                    postkeyValues.Add(new KeyValuePair<string, string>("PostData_", encryptData));
-
-                    FormUrlEncodedContent formContent = new FormUrlEncodedContent(postkeyValues);
-
-                    string responseBody = await ExePostForm(postUrl, formContent);
-
-                    if (!string.IsNullOrWhiteSpace(responseBody))
-                    {
-                        // 取得回傳參數(ex:Status=TRA10027&Message=此訂單已申請過請款，不可重覆請款&MerchantID=11250&Amt=10&MerchantOrderNo=20140519193443),儲存為NameValueCollection
-                        NameValueCollection collection = HttpUtility.ParseQueryString(responseBody);
-
-                        // TODO DB紀錄處理狀況與訂單更新處理
-
-
-                        if (collection["Status"] != null && string.Equals(collection["Status"], "SUCCESS"))
-                        {
-                            result.IsSuccess = true;
-                            result.Message = responseBody;
-                        }
-                        else
-                        {
-                            result.IsSuccess = false;
-                            result.Message = responseBody;
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LogUtil.WriteLog(ex);
-            }
-
-            return Content(JsonConvert.SerializeObject(result));
-        }
     }
 }

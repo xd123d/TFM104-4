@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using TFM104MVC.Extensions;
 
 namespace TFM104MVC.Controllers
 {

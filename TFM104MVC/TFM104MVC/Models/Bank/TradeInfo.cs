@@ -226,6 +226,6 @@
         /// <para>2.當該筆訂單金額小於 30 元或大於 2 萬元時，即使此參數設定為啟用，MPG 付款頁面仍不會顯示此支付方式選項。</para>
         /// </summary>
         public int? CVSCOM { get; set; }
-
+        public int? LINEPAY { get;  set; }
     }
 }
