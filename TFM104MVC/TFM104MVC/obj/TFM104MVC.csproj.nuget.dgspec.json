@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/TFM104MVC.csproj.nuget.dgspec.json
     "C:\\Users\\Tibame_T14\\source\\repos\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Tibame_T14\\source\\repos\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
         "packagesPath": "C:\\Users\\Tibame_T14\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Tibame_T14\\source\\repos\\TFM104MVC\\TFM104MVC\\obj\\",
+=======
+    "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
+        "projectName": "TFM104MVC",
+        "projectPath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
+        "packagesPath": "C:\\Users\\Tibame_T14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\obj\\",
+>>>>>>> unity1:MVC_Project_220319/obj/MVC_Project_220322.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tibame_T14\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +58,7 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/TFM104MVC.csproj.nuget.dgspec.json
             "MailKit": {
               "target": "Package",
               "version": "[3.2.0, )"
@@ -61,6 +76,21 @@
               "version": "[5.0.15, )"
             },
             "Microsoft.EntityFrameworkCore": {
+=======
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+>>>>>>> unity1:MVC_Project_220319/obj/MVC_Project_220322.csproj.nuget.dgspec.json
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.15, )"
             },
@@ -73,6 +103,7 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.15, )"
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/TFM104MVC.csproj.nuget.dgspec.json
             },
             "MimeKit": {
               "target": "Package",
@@ -81,10 +112,20 @@
             "System.Text.RegularExpressions": {
               "target": "Package",
               "version": "[4.3.1, )"
+=======
+>>>>>>> unity1:MVC_Project_220319/obj/MVC_Project_220322.csproj.nuget.dgspec.json
             },
             "stateless": {
               "target": "Package",
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/TFM104MVC.csproj.nuget.dgspec.json
               "version": "[5.1.1, )"
+=======
+              "version": "[5.0.2, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+>>>>>>> unity1:MVC_Project_220319/obj/MVC_Project_220322.csproj.nuget.dgspec.json
             }
           },
           "imports": [

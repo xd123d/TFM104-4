@@ -20,10 +20,14 @@ namespace TFM104MVC.Profiles
 
             CreateMap<ProductCreationDto, Product>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));
+<<<<<<< HEAD
 
             CreateMap<ProductUpdateDto, Product>();
 
             CreateMap<Product, ProductUpdateDto>();
+=======
+            CreateMap<ProductUpdateDto, Product>();
+>>>>>>> unity1
         }
     }
 }

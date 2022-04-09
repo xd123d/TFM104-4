@@ -9,7 +9,11 @@ namespace TFM104MVC.Services
 {
     public interface IProductRepository
     {
+<<<<<<< HEAD
         Task<IEnumerable<Product>> GetProductsAsync(string keyword,string operatorType,int ratingValue,string Region,string Traveldays , string Triptype,int pageSize,int pageNumber);//取得所有商品
+=======
+        Task<IEnumerable<Product>> GetProductsAsync(string keyword,string operatorType,int ratingValue,string Region,string Traveldays , string Triptype);//取得所有商品
+>>>>>>> unity1
         Task<Product> GetProductAsync(Guid ProductId);//取得單一商品(使用者輸入商品ID)
 
         Task<bool> ProductExistAsync(Guid ProductId);
@@ -24,6 +28,7 @@ namespace TFM104MVC.Services
         void AddProductPicture(Guid productId, ProductPicture productPicture);
         void DeleteProduct(Product product);
         void DeleteProductPicture(ProductPicture productPicture);
+<<<<<<< HEAD
 
         Task<ShoppingCart> GetShoppingCartByUserId(string UserId);
         Task CreateShoppingCart(ShoppingCart shoppingCart);
@@ -32,5 +37,7 @@ namespace TFM104MVC.Services
         void DeleteShoppingCartItem(LineItem lineItem);
 
         Task AddOrderAsync(Order order);
+=======
+>>>>>>> unity1
     }
 }

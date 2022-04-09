@@ -3,6 +3,8 @@
   "targets": {
     "net5.0": {
       "AutoMapper/11.0.0": {
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0"
@@ -28,6 +30,146 @@
         }
       },
       "Humanizer.Core/2.8.26": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/5.0.13": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.7.1"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+=======
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "5.0.13",
+          "Microsoft.CodeAnalysis.Razor": "5.0.13"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "5.0.13",
+          "Microsoft.CodeAnalysis.Razor": "5.0.13",
+          "Microsoft.Extensions.DependencyModel": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "buildTransitive/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets": {}
+        }
+      },
+      "Microsoft.AspNetCore.Razor/2.2.0": {
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+      "Humanizer.Core/2.8.26": {
+=======
+      "Microsoft.AspNetCore.Razor.Language/5.0.13": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Razor.Runtime/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Html.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Razor": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Runtime.dll": {}
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.Analyzers/3.0.0": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.Common/3.8.0": {
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -63,11 +205,20 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
       "Microsoft.AspNetCore.JsonPatch/5.0.15": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "12.0.2"
+=======
+      "Microsoft.CodeAnalysis.Razor/5.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "5.0.13",
+          "Microsoft.CodeAnalysis.CSharp": "3.8.0",
+          "Microsoft.CodeAnalysis.Common": "3.8.0"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
@@ -324,6 +475,18 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {}
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
         }
       },
       "Microsoft.Extensions.Logging/5.0.0": {
@@ -1416,6 +1579,18 @@
           "ref/netstandard1.3/_._": {}
         }
       },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
+      "System.Text.Encodings.Web/4.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       "System.Text.RegularExpressions/4.3.1": {
         "type": "package",
         "dependencies": {
@@ -1587,6 +1762,8 @@
   "libraries": {
     "AutoMapper/11.0.0": {
       "sha512": "+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
       "type": "package",
       "path": "automapper/11.0.0",
       "files": [
@@ -1628,6 +1805,133 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/5.0.13": {
+      "sha512": "8b2ahFEoWQlV95S3mRyr11AmbC2bXG3KCJN9ClA+TSKu+u7sWxeYOfVU78hulHRaF8sYaTVxkLISQGDhzD2Tjg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.facebook/5.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.xml",
+        "microsoft.aspnetcore.authentication.facebook.5.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.facebook.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.15": {
+      "sha512": "8QtBGn0cik+lmg/qGj9Ukt+Ce41K6aO/8FXU81AWYAU6CJo5cAbjy+Paqqz+tCZwnO4YdLS04+W5Nz1RxIG9dQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.5.0.15.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
+      "sha512": "Y4rs5aMEXY8G7wJo5S3EEt6ltqyOTr/qOeZzfn+hw/fuQj5GppGckMY5psGLETo1U9hcT5MmAhaT5xtusM1b5g==",
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
+      "type": "package",
+      "path": "automapper/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "sha512": "0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+=======
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.13": {
+      "sha512": "DwK9l7HFpbnXwCV0hHaAGPPWsTjV+Uf3qgEGwrjcG6imuuXQh+Q782hTyij1PQwj5ABoIeP2Nk66t5M1MoKM7g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/5.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll",
+        "microsoft.aspnetcore.mvc.razor.extensions.5.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.extensions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.13": {
+      "sha512": "RWqLU7pkJTdL943tqfgOvhZPDiEYi6eNY4HUdycfbEXe1KdkQbw4Tgo0ZZt14iDhKcBOhmA2BfRYUVsR8rNx7Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/5.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
+        "buildTransitive/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets",
+        "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.xml",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razor.runtimecompilation.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Razor/2.2.0": {
+      "sha512": "V54PIyDCFl8COnTp9gezNHpUNHk7F9UnerGeZy3UfbnwYvfzbo+ipqQmSgeoESH8e0JvKhRTyQyZquW2EPtCmg==",
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+    "Humanizer.Core/2.8.26": {
+      "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "type": "package",
+      "path": "humanizer.core/2.8.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.8.26.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+=======
+    "Microsoft.AspNetCore.Razor.Language/5.0.13": {
+      "sha512": "DLQ7mTPMvHJvJeXxqoozdZVmLLeU/ZwPTtgbOKtsAIaTP/JHqlJqoJYstxLy5w2dZi6Wy0NNPiLhINGTruv+iw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.razor.language/5.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll",
+        "microsoft.aspnetcore.razor.language.5.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.razor.language.nuspec"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       ]
     },
     "MailKit/3.2.0": {
@@ -1681,21 +1985,34 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
     "Microsoft.AspNetCore.JsonPatch/5.0.15": {
       "sha512": "vAlbR2pq5JaUNRtOaTIs1Cyn5teLMtDJvzRQRqrnPfcjh1hErp9hHyJzN7B79swbz7JngL7evTPfC5mbp3iWxQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.jsonpatch/5.0.15",
+=======
+    "Microsoft.CodeAnalysis.Razor/5.0.13": {
+      "sha512": "cPDnV7pkiG+q2mLIiSWab43pETAvXbAF4sqkTxQb5nf4I66pDg91Idj+M5TAQPJtlPgNGjGMNRI/XOTMrhfInQ==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.razor/5.0.13",
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
         "lib/net461/Microsoft.AspNetCore.JsonPatch.dll",
         "lib/net461/Microsoft.AspNetCore.JsonPatch.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.xml",
         "microsoft.aspnetcore.jsonpatch.5.0.15.nupkg.sha512",
         "microsoft.aspnetcore.jsonpatch.nuspec"
+=======
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll",
+        "microsoft.codeanalysis.razor.5.0.13.nupkg.sha512",
+        "microsoft.codeanalysis.razor.nuspec"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       ]
     },
     "Microsoft.AspNetCore.Mvc.NewtonsoftJson/5.0.15": {
@@ -2079,6 +2396,35 @@
         "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
+      ]
+    },
+    "Microsoft.Extensions.DependencyModel/5.0.0": {
+      "sha512": "umBECCoMC+sOUgm083yFr8SxTobUOcPFH4AXigdO2xJiszCHAnmeDl4qPphJt+oaJ/XIfV1wOjIts2nRnki61Q==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencymodel/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net451/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net451/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net461/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net461/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard1.3/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard1.3/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
+        "microsoft.extensions.dependencymodel.5.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       ]
     },
     "Microsoft.Extensions.Logging/5.0.0": {
@@ -2275,6 +2621,134 @@
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
         "microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
         "microsoft.identitymodel.protocols.openidconnect.nuspec"
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
+      ]
+    },
+    "Microsoft.IdentityModel.Tokens/6.7.1": {
+      "sha512": "Td9Vn9d/0eM1zlUUvaVQzjqdBkBLJ2oGtGL/LYPuiCUAALMeAHVDtpXGk8eYI8Gbduz5n+o7ifldsCIca4MWew==",
+      "type": "package",
+      "path": "microsoft.identitymodel.tokens/6.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.IdentityModel.Tokens.dll",
+        "lib/net45/Microsoft.IdentityModel.Tokens.xml",
+        "lib/net461/Microsoft.IdentityModel.Tokens.dll",
+        "lib/net461/Microsoft.IdentityModel.Tokens.xml",
+        "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
+        "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
+        "microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
+        "microsoft.identitymodel.tokens.nuspec"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.NETCore.Targets/1.1.3": {
+      "sha512": "3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
+      "type": "package",
+      "path": "microsoft.netcore.targets/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.targets.1.1.3.nupkg.sha512",
+        "microsoft.netcore.targets.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration/5.0.2": {
+      "sha512": "YUah81QG5q/ViVbr1BZcTbDLNJ5/k84fr+xx3/IoDVJR8KEUm89HmPAGM+FMMyWOjit+CIVpyOq7yEmRBBWXxQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.dll",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.xml",
+        "microsoft.visualstudio.web.codegeneration.5.0.2.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/5.0.2": {
+      "sha512": "34v6AkkRJykgFq7rHwNbzXBsLFquevLuegM9XDQl2j+wyOfj+ql1++jUR1WdZoPkv04WoM09mD47S3lMzJmHrQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.contracts/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml",
+        "microsoft.visualstudio.web.codegeneration.contracts.5.0.2.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.contracts.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Core/5.0.2": {
+      "sha512": "R7mrxvTtv/MiEH42OtHYi/3L0A/vaAH8mwg+3yAyQtVuy6v9CeeVyL30lfTQ7EYV4ezUmuQKFwfjcU6PP0/KSQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.core/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.xml",
+        "microsoft.visualstudio.web.codegeneration.core.5.0.2.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.core.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design/5.0.2": {
+      "sha512": "9eTZV7W+S2iO2AJD03xXyXJZ+Nf71Y25gMXhqyXb8bB63jPfn+VQhV8I1lb6J+NR3jW98m5EB9QBftBSrjgiYQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.design/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net5.0/dotnet-aspnet-codegenerator-design.dll",
+        "lib/net5.0/dotnet-aspnet-codegenerator-design.xml",
+        "microsoft.visualstudio.web.codegeneration.design.5.0.2.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.design.nuspec",
+        "runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.exe",
+        "runtimes/win-arm/lib/net5.0/dotnet-aspnet-codegenerator-design.xml",
+        "runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe",
+        "runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.xml"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/5.0.2": {
+      "sha512": "f9XeBRS9ICosrCpbO9jnAVMd/ISLhaZgx388XNBjigiyBJuq577J6tQgQWZA8PQTiPj6MKe9HVIW2GnKXDiUrQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "Templates/DbContext/NewLocalDbContext.cshtml",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.runtimeconfig.json",
+        "lib/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml",
+        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.5.0.2.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.nuspec"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       ]
     },
     "Microsoft.IdentityModel.Tokens/6.7.1": {
@@ -5359,6 +5833,28 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
+=======
+    "System.Text.Encodings.Web/4.5.0": {
+      "sha512": "Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
+      "type": "package",
+      "path": "system.text.encodings.web/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.4.5.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
     "System.Text.RegularExpressions/4.3.1": {
       "sha512": "N0kNRrWe4+nXOWlpLT4LAY5brb8caNFlUuIRpraCVMDLYutKkol1aV079rQjLuSxKMJT2SpBQsYX9xbcTMmzwg==",
       "type": "package",
@@ -5876,6 +6372,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
       "MailKit >= 3.2.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.15",
       "Microsoft.AspNetCore.JsonPatch >= 5.0.15",
@@ -5886,6 +6383,16 @@
       "MimeKit >= 3.2.0",
       "System.Text.RegularExpressions >= 4.3.1",
       "stateless >= 5.1.1"
+=======
+      "Microsoft.AspNetCore.Authentication.Facebook >= 5.0.13",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.15",
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.13",
+      "Microsoft.EntityFrameworkCore >= 5.0.15",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.15",
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.15",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "System.Text.RegularExpressions >= 4.3.1"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
     ]
   },
   "packageFolders": {
@@ -5894,11 +6401,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
       "projectUniqueName": "C:\\Users\\Tibame_T14\\source\\repos\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
       "projectName": "TFM104MVC",
       "projectPath": "C:\\Users\\Tibame_T14\\source\\repos\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
       "packagesPath": "C:\\Users\\Tibame_T14\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Tibame_T14\\source\\repos\\TFM104MVC\\TFM104MVC\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
+      "projectName": "TFM104MVC",
+      "projectPath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\TFM104MVC.csproj",
+      "packagesPath": "C:\\Users\\Tibame_T14\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tibame_T14\\Documents\\GitHub\\TFM104-4\\TFM104MVC\\TFM104MVC\\obj\\",
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tibame_T14\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5931,19 +6446,33 @@
             "target": "Package",
             "version": "[11.0.0, )"
           },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
           "MailKit": {
             "target": "Package",
             "version": "[3.2.0, )"
+=======
+          "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[5.0.13, )"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[5.0.15, )"
           },
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
           "Microsoft.AspNetCore.JsonPatch": {
             "target": "Package",
             "version": "[5.0.15, )"
           },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+            "target": "Package",
+            "version": "[5.0.15, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+=======
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
             "target": "Package",
             "version": "[5.0.15, )"
           },
@@ -5960,6 +6489,7 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.15, )"
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
           },
           "MimeKit": {
             "target": "Package",
@@ -5968,10 +6498,20 @@
           "System.Text.RegularExpressions": {
             "target": "Package",
             "version": "[4.3.1, )"
+=======
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
           },
           "stateless": {
             "target": "Package",
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/project.assets.json
             "version": "[5.1.1, )"
+=======
+            "version": "[5.0.2, )"
+          },
+          "System.Text.RegularExpressions": {
+            "target": "Package",
+            "version": "[4.3.1, )"
+>>>>>>> unity1:MVC_Project_220319/obj/project.assets.json
           }
         },
         "imports": [

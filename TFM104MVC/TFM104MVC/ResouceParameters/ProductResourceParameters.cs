@@ -13,6 +13,7 @@ namespace TFM104MVC.ResouceParameters
         public string Region { get; set; }
         public string Traveldays { get; set; }
         public string Triptype { get; set; }
+<<<<<<< HEAD
         public int PageNumber { 
             get 
             { 
@@ -42,5 +43,8 @@ namespace TFM104MVC.ResouceParameters
         private int _pageNumber = 1;
         private int _pageSize = 10;
         const int maxPageSize = 50;
+=======
+
+>>>>>>> unity1
     }
 }

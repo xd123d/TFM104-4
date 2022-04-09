@@ -32,6 +32,7 @@ namespace TFM104MVC.Migrations
                     b.ToTable("Admins");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TFM104MVC.Models.Firm", b =>
                 {
                     b.Property<int>("UserId")
@@ -49,12 +50,16 @@ namespace TFM104MVC.Migrations
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.LineItem", b =>
+=======
+            modelBuilder.Entity("TFM104MVC.Models.CustomerRating", b =>
+>>>>>>> unity1
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
                     b.Property<double?>("DiscountPersent")
                         .HasColumnType("float");
 
@@ -63,10 +68,20 @@ namespace TFM104MVC.Migrations
 
                     b.Property<decimal>("OriginalPrice")
                         .HasColumnType("decimal(18,2)");
+=======
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+>>>>>>> unity1
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
+<<<<<<< HEAD
                     b.Property<int?>("ShoppingCartId")
                         .HasColumnType("int");
 
@@ -79,6 +94,40 @@ namespace TFM104MVC.Migrations
                     b.HasIndex("ShoppingCartId");
 
                     b.ToTable("LineItems");
+=======
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CustomerRatings");
+                });
+
+            modelBuilder.Entity("TFM104MVC.Models.Firm", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaxId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Firms");
+>>>>>>> unity1
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.Member", b =>
@@ -107,6 +156,7 @@ namespace TFM104MVC.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
                     b.Property<DateTime>("CreateDateUTC")
                         .HasColumnType("datetime2");
 
@@ -115,6 +165,21 @@ namespace TFM104MVC.Migrations
 
                     b.Property<string>("TransactionMetaData")
                         .HasColumnType("nvarchar(max)");
+=======
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double?>("Discount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("int");
+>>>>>>> unity1
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -126,6 +191,39 @@ namespace TFM104MVC.Migrations
                     b.ToTable("Orders");
                 });
 
+<<<<<<< HEAD
+=======
+            modelBuilder.Entity("TFM104MVC.Models.Orderdetail", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double?>("DiscountPersent")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RateId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("RateId")
+                        .IsUnique();
+
+                    b.ToTable("Orderdetails");
+                });
+
+>>>>>>> unity1
             modelBuilder.Entity("TFM104MVC.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -156,6 +254,12 @@ namespace TFM104MVC.Migrations
                     b.Property<decimal>("OriginalPrice")
                         .HasColumnType("decimal(18,2)");
 
+<<<<<<< HEAD
+=======
+                    b.Property<int>("ProductStatus")
+                        .HasColumnType("int");
+
+>>>>>>> unity1
                     b.Property<int?>("Region")
                         .HasColumnType("int");
 
@@ -189,8 +293,12 @@ namespace TFM104MVC.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Url")
+<<<<<<< HEAD
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+=======
+                        .HasColumnType("nvarchar(max)");
+>>>>>>> unity1
 
                     b.HasKey("Id");
 
@@ -212,6 +320,7 @@ namespace TFM104MVC.Migrations
                     b.ToTable("Roles");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TFM104MVC.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
@@ -230,6 +339,8 @@ namespace TFM104MVC.Migrations
                     b.ToTable("ShoppingCarts");
                 });
 
+=======
+>>>>>>> unity1
             modelBuilder.Entity("TFM104MVC.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -242,9 +353,17 @@ namespace TFM104MVC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
+<<<<<<< HEAD
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+=======
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+>>>>>>> unity1
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -252,14 +371,21 @@ namespace TFM104MVC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+<<<<<<< HEAD
+=======
+                        .IsRequired()
+>>>>>>> unity1
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RoleName")
                         .HasColumnType("nvarchar(450)");
 
+<<<<<<< HEAD
                     b.Property<string>("Salt")
                         .HasColumnType("nvarchar(max)");
 
+=======
+>>>>>>> unity1
                     b.Property<bool>("Verification")
                         .HasColumnType("bit");
 
@@ -281,6 +407,7 @@ namespace TFM104MVC.Migrations
                     b.Navigation("User");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TFM104MVC.Models.Firm", b =>
                 {
                     b.HasOne("TFM104MVC.Models.User", "User")
@@ -309,6 +436,28 @@ namespace TFM104MVC.Migrations
                         .HasForeignKey("ShoppingCartId");
 
                     b.Navigation("Product");
+=======
+            modelBuilder.Entity("TFM104MVC.Models.CustomerRating", b =>
+                {
+                    b.HasOne("TFM104MVC.Models.Product", "Product")
+                        .WithMany("CustomerRatings")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("TFM104MVC.Models.Firm", b =>
+                {
+                    b.HasOne("TFM104MVC.Models.User", "User")
+                        .WithOne("Firms")
+                        .HasForeignKey("TFM104MVC.Models.Firm", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+>>>>>>> unity1
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.Member", b =>
@@ -325,7 +474,11 @@ namespace TFM104MVC.Migrations
             modelBuilder.Entity("TFM104MVC.Models.Order", b =>
                 {
                     b.HasOne("TFM104MVC.Models.User", "User")
+<<<<<<< HEAD
                         .WithMany("Orders")
+=======
+                        .WithMany()
+>>>>>>> unity1
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -333,14 +486,28 @@ namespace TFM104MVC.Migrations
                     b.Navigation("User");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TFM104MVC.Models.ProductPicture", b =>
                 {
                     b.HasOne("TFM104MVC.Models.Product", "Product")
                         .WithMany("ProductPictures")
+=======
+            modelBuilder.Entity("TFM104MVC.Models.Orderdetail", b =>
+                {
+                    b.HasOne("TFM104MVC.Models.Order", "Order")
+                        .WithMany("Orderdetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TFM104MVC.Models.Product", "Product")
+                        .WithMany("Orderdetails")
+>>>>>>> unity1
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.Navigation("Product");
                 });
 
@@ -353,30 +520,82 @@ namespace TFM104MVC.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+=======
+                    b.HasOne("TFM104MVC.Models.CustomerRating", "CustomerRating")
+                        .WithOne("Orderdetail")
+                        .HasForeignKey("TFM104MVC.Models.Orderdetail", "RateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomerRating");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("TFM104MVC.Models.ProductPicture", b =>
+                {
+                    b.HasOne("TFM104MVC.Models.Product", "Product")
+                        .WithMany("ProductPictures")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+>>>>>>> unity1
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.User", b =>
                 {
                     b.HasOne("TFM104MVC.Models.Role", "Role")
+<<<<<<< HEAD
                         .WithMany()
+=======
+                        .WithMany("Users")
+>>>>>>> unity1
                         .HasForeignKey("RoleName");
 
                     b.Navigation("Role");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("TFM104MVC.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
+=======
+            modelBuilder.Entity("TFM104MVC.Models.CustomerRating", b =>
+                {
+                    b.Navigation("Orderdetail");
+                });
+
+            modelBuilder.Entity("TFM104MVC.Models.Order", b =>
+                {
+                    b.Navigation("Orderdetails");
+>>>>>>> unity1
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.Product", b =>
                 {
+<<<<<<< HEAD
                     b.Navigation("ProductPictures");
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.ShoppingCart", b =>
                 {
                     b.Navigation("ShoppingCartItems");
+=======
+                    b.Navigation("CustomerRatings");
+
+                    b.Navigation("Orderdetails");
+
+                    b.Navigation("ProductPictures");
+                });
+
+            modelBuilder.Entity("TFM104MVC.Models.Role", b =>
+                {
+                    b.Navigation("Users");
+>>>>>>> unity1
                 });
 
             modelBuilder.Entity("TFM104MVC.Models.User", b =>
@@ -386,10 +605,13 @@ namespace TFM104MVC.Migrations
                     b.Navigation("Firms");
 
                     b.Navigation("Members");
+<<<<<<< HEAD
 
                     b.Navigation("Orders");
 
                     b.Navigation("ShoppingCart");
+=======
+>>>>>>> unity1
                 });
 #pragma warning restore 612, 618
         }

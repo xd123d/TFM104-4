@@ -330,6 +330,30 @@
           "lib/netstandard2.1/AutoMapper.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.0.0.0"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/Release/net5.0/PubTmp/Out/TFM104MVC.deps.json
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+=======
+>>>>>>> unity1
           }
         },
         "compile": {
@@ -357,8 +381,15 @@
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
           }
+<<<<<<< HEAD
         }
       },
+=======
+>>>>>>> unity1:TFM104MVC/TFM104MVC/bin/Release/net5.0/TFM104MVC.deps.json
+        }
+      },
+      "Humanizer.Core/2.8.26": {},
+>>>>>>> unity1
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.0.1": {
         "dependencies": {
@@ -479,12 +510,21 @@
           "Humanizer.Core": "2.8.26",
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.15"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/Release/net5.0/PubTmp/Out/TFM104MVC.deps.json
+=======
+>>>>>>> unity1
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {
             "assemblyVersion": "5.0.15.0",
             "fileVersion": "5.0.1522.10812"
           }
+<<<<<<< HEAD
+=======
+>>>>>>> unity1:TFM104MVC/TFM104MVC/bin/Release/net5.0/TFM104MVC.deps.json
+>>>>>>> unity1
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/5.0.15": {

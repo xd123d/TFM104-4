@@ -57,7 +57,11 @@ namespace TFM104MVC.Controllers
         }
 
         [HttpPost] // /api/products/{productId}/pictures
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,Firm")]
+=======
+        [Authorize(Roles = "Admin")]
+>>>>>>> unity1
         public async Task<IActionResult> CreateProductPicture(
             [FromRoute]Guid productId,
             [FromBody] ProductPictureForCreationDto productPictureForCreationDto
@@ -74,7 +78,11 @@ namespace TFM104MVC.Controllers
             return CreatedAtRoute("GetPicture", new { productId = pictureModel.ProductId, pictureId = pictureModel.Id }, pictureToReturn);
         }
         [HttpDelete("{pictureId}")]
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,Firm")]
+=======
+        [Authorize(Roles = "Admin")]
+>>>>>>> unity1
         public async Task<IActionResult> DeletePicture([FromRoute]Guid productId,[FromRoute] int pictureId)
         {
             if (!(await _productRepository.ProductExistAsync(productId)))

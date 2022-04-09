@@ -8,7 +8,11 @@ namespace TFM104MVC.Services
 {
     public interface IAuthenticateRepository
     {
+<<<<<<< HEAD
         User CheckUser(string account,string password);
+=======
+        User CheckUser(string account , string password);
+>>>>>>> unity1
         User AccountCheck(string account);
 
         void AddUser(User user);

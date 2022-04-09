@@ -22,7 +22,11 @@ namespace TFM104MVC.Services
             //return _context.Products.Where(n => n.Id == ProductId).FirstOrDefault();
         }
 
+<<<<<<< HEAD
         public async Task<IEnumerable<Product>> GetProductsAsync(string keyword , string operatorType , int ratingValue,string region,string travelDays,string tripType,int pageSize, int pageNumber)
+=======
+        public async Task<IEnumerable<Product>> GetProductsAsync(string keyword , string operatorType , int ratingValue,string region,string travelDays,string tripType)
+>>>>>>> unity1
         {
             IQueryable<Product> result = _context.Products.Include(t => t.ProductPictures);
             if (!string.IsNullOrWhiteSpace(keyword))
@@ -67,6 +71,7 @@ namespace TFM104MVC.Services
                 var r3 = (TripType)Enum.Parse(typeof(TripType), tripType);
                 result = result.Where(n => n.TripType == r3);
             }
+<<<<<<< HEAD
 
             //分頁功能的實現放在最後 因為首先要過濾數據 搜索排序 最後再形成分頁
             //分頁思路
@@ -77,6 +82,8 @@ namespace TFM104MVC.Services
             //以pageSize為標準顯示一定量的資料
             result = result.Take(pageSize);
 
+=======
+>>>>>>> unity1
             return await result.ToListAsync();
         }
 
@@ -141,6 +148,7 @@ namespace TFM104MVC.Services
         {
             _context.ProductPictures.Remove(productPicture);
         }
+<<<<<<< HEAD
 
         public async Task<ShoppingCart> GetShoppingCartByUserId(string UserId)
         {
@@ -177,5 +185,7 @@ namespace TFM104MVC.Services
         {
             await _context.Orders.AddAsync(order);
         }
+=======
+>>>>>>> unity1
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.ComponentModel.DataAnnotations;
+=======
+>>>>>>> unity1
 using System.Linq;
 using System.Threading.Tasks;
 using TFM104MVC.Models;
@@ -9,6 +12,7 @@ namespace TFM104MVC.Dtos
 {
     public class UserForCreationDto
     {
+<<<<<<< HEAD
         [Required(ErrorMessage ="帳號不可為空")]
         [EmailAddress(ErrorMessage ="帳號須符合信箱格式")]
         public string Account { get; set; }         //1.使用者帳號 信箱
@@ -21,6 +25,16 @@ namespace TFM104MVC.Dtos
         public string FirstName { get; set; }  //姓
 
         [Phone(ErrorMessage ="電話格式不符")]
+=======
+        public string Account { get; set; }         //1.使用者帳號 信箱
+
+        public string Password { get; set; }        //2.使用者密碼 //SHA256
+
+        public string LastName { get; set; }  //姓
+
+        public string FirstName { get; set; }  //名
+
+>>>>>>> unity1
         public string Phone { get; set; }
 
         //信箱驗證

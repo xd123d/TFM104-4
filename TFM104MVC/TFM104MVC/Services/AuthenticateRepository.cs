@@ -26,7 +26,11 @@ namespace TFM104MVC.Services
 
         public User CheckUser(string account,string password)
         {
+<<<<<<< HEAD
             return _context.Users.FirstOrDefault(x=>x.Account == account && x.Password == password);
+=======
+            return _context.Users.FirstOrDefault(x => x.Account == account && x.Password == password);
+>>>>>>> unity1
         }
 
         public bool Save()

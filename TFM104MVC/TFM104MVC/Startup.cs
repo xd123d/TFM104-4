@@ -17,8 +17,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+<<<<<<< HEAD
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.Cookies;
+=======
+>>>>>>> unity1
 
 namespace TFM104MVC
 {
@@ -34,6 +37,10 @@ namespace TFM104MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< HEAD
+=======
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+>>>>>>> unity1
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => 
                 {
@@ -53,9 +60,12 @@ namespace TFM104MVC
                 });
             services.AddControllersWithViews();
             services.AddControllers(setupAction => setupAction.ReturnHttpNotAcceptable = true)
+<<<<<<< HEAD
                 .AddNewtonsoftJson(setupAction=> {
                     setupAction.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 })
+=======
+>>>>>>> unity1
                 .AddXmlDataContractSerializerFormatters()
                 .ConfigureApiBehaviorOptions(setupAction =>
                 {
@@ -78,8 +88,11 @@ namespace TFM104MVC
                 });
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IAuthenticateRepository, AuthenticateRepository>();
+<<<<<<< HEAD
             services.AddSingleton<ISender, EmailSender>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+=======
+>>>>>>> unity1
             services.AddDbContext<AppDbContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("MVC")));
             //±½´yprofileÀÉ®×
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

@@ -16,7 +16,10 @@ namespace TFM104MVC.Profiles
             CreateMap<ProductPictureForCreationDto, ProductPicture>(); //不用改寫Id是因為ProductPicture的Id屬性為自動編號
                                                                        //與Guid不同 不用去new出一個新的
                                                                        //程式會自動幫我們偵測遞增
+<<<<<<< HEAD
             CreateMap<ProductPicture, ProductPictureForCreationDto>();
+=======
+>>>>>>> unity1
         }
     }
 }

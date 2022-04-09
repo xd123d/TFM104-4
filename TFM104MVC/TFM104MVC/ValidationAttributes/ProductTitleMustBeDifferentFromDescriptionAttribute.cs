@@ -19,4 +19,8 @@ namespace TFM104MVC.ValidationAttributes
             return ValidationResult.Success;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> unity1

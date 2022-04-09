@@ -12,7 +12,15 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("TFM104MVC")]
+<<<<<<< HEAD
+<<<<<<< HEAD:TFM104MVC/TFM104MVC/obj/Debug/net5.0/TFM104MVC.AssemblyInfo.cs
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+=======
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+>>>>>>> unity1:TFM104MVC/TFM104MVC/obj/Release/net5.0/TFM104MVC.AssemblyInfo.cs
+=======
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+>>>>>>> unity1
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("TFM104MVC")]
