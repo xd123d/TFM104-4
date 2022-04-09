@@ -12,10 +12,10 @@
 
                 <template v-for="(img,num) in pic">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"v-if="num == 0"></button>
+                            aria-current="true"   v-bind:aria-label=" 'Slide'+ num"v-if="num == 0"></button>
 
                     <button type="button" data-bs-target="#carouselExampleIndicators" v-bind:data-bs-slide-to="num"
-                          v-bind:aria-label=" 'Slide'+ num+1" v-else></button>
+                          v-bind:aria-label=" 'Slide'+ num" v-else></button>
                 </template>
                     @*<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
             aria-label="Slide 3"></button>*@
@@ -797,6 +797,7 @@
     var getUrlString = location.pathname; //抓網頁路徑部分(/ProductView/product/XXXXX)
     var pid = getUrlString.replace("/ProductView/product/", " ");//字元處理 移除"/ProductView/product/" 字串
 
+    
     var app = new Vue({
         el: '#productVue',
         data: {
