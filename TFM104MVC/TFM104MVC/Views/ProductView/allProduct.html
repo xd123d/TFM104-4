@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--bootstrap js bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!--fontawesome-->
+    <!-- <script src="https://kit.fontawesome.com/c313a8a456.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384–5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <!--vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!--我硬幹ㄉcss-->
+    <link rel="stylesheet" href="allProduct.css" type="text/css">
+    <!--字體fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="ano nymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row breadcrumb mt-3 mb-3">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">露營</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row mb-3">
+            <h2 class="fw-bold">
+                搜尋結果"
+                <b class="text-success">
+                    xxx
+                </b>
+                "
+            </h2>
+        </div>
+    </div>
+    <!--商品列表區塊-->
+    <div class="container">
+        <div class="row">
+            <!--左側區塊-->
+            <div class="col-12 col-lg-3 ">
+                <!--目的地-->
+                <div class="item">
+                    <div class="ms-sm-2">
+                        <p class="fw-bold mb-3">目的地</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="North" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                北北基
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="East" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                宜花東
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="OutlyingIslands" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                離島地區
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="South" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                高屏地區
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="MiddleNorth" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                桃竹苗
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Middle" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                中彰投
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="MiddleSouth" id="countryCheck">
+                            <label class="form-check-label" for="countryCheck">
+                                雲嘉南
+                            </label>
+                        </div>
+                        <div class="d-grid gap-2 mt-3 mb-3">
+                            <button class="btn btn-outline-success" type="button">
+                                查看更多目的地
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--商品類別-->
+                <div class="item">
+                    <div class="ms-sm-2">
+                        <p class="fw-bold mb-3">商品類別</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="OutdoorLeisure" id="productType">
+                            <label class="form-check-label" for="productType">
+                                戶外休閒
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="AttractionTickets" id="productType">
+                            <label class="form-check-label" for="productType">
+                                景點門票
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="WaterActivities" id="productType">
+                            <label class="form-check-label" for="productType">
+                                水上活動
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="LocalSpecialties" id="productType">
+                            <label class="form-check-label" for="productType">
+                                地方特色
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="SpringTour" id="productType">
+                            <label class="form-check-label" for="productType">
+                                溫泉之旅
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="HistoryJourney" id="productType">
+                            <label class="form-check-label" for="productType">
+                                人文之旅
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--我是出發日-->
+                <div class="item">
+                    <div class="btn-datepicker btn d-flex gap-3 " data-bs-toggle="collapse" data-bs-target="#datepicker"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <span class="text-muted"><i class="bi bi-calendar"></i></span>
+                        <p class="fw-bold mb-3">篩選出發日期</p>
+                    </div>
+                </div>
+
+                <div class="collapse mb-5" id="datepicker">
+                    <div class="card card-body">
+                        這邊想要置入日期選擇器
+                        <section class="ftco-section">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 text-center mb-5">
+                                        <h2 class="heading-section">Calendar #03</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="calendar-section">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-6">
+
+                                                    <div class="calendar calendar-first" id="calendar_first">
+                                                        <div class="calendar_header">
+                                                            <button class="switch-month switch-left">
+                                                                <i class="fa fa-chevron-left"></i>
+                                                            </button>
+                                                            <h2></h2>
+                                                            <button class="switch-month switch-right">
+                                                                <i class="fa fa-chevron-right"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="calendar_weekdays"></div>
+                                                        <div class="calendar_content"></div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6">
+
+                                                    <div class="calendar calendar-second" id="calendar_second">
+                                                        <div class="calendar_header">
+                                                            <button class="switch-month switch-left">
+                                                                <i class="fa fa-chevron-left"></i>
+                                                            </button>
+                                                            <h2></h2>
+                                                            <button class="switch-month switch-right">
+                                                                <i class="fa fa-chevron-right"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="calendar_weekdays"></div>
+                                                        <div class="calendar_content"></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div> <!-- End Row -->
+
+                                        </div> <!-- End Calendar -->
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+                <!--我是價錢-->
+                <div class="item">
+                    <p class="fw-bold mb-3">價錢(TWD)</p>
+                    <label class="form-label" for="customRange1">Example range</label>
+                    <div class="range">
+                        <input type="range" class="form-range" id="customRange1" />
+                    </div>
+                </div>
+                <!--行程時間-->
+                <div class="item">
+                    <p class="fw-bold mb-3">行程天數</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="lessthan1days" id="travelDays">
+                        <label class="form-check-label" for="travelDays">
+                            1天以內
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="onedayto3days" id="travelDays">
+                        <label class="form-check-label" for="travelDays">
+                            1~3天
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="3to5days" id="travelDays">
+                        <label class="form-check-label" for="travelDays">
+                            3~5天
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="morethan5days" id="travelDays">
+                        <label class="form-check-label" for="travelDays">
+                            5天以上
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <!--右側區塊-->
+            <div class="col-12 col-lg-9">
+                <!--商品排序器-->
+                <div class="item">
+                    <div class="filter">
+                        <span class="text-primary">xxx</span>項體驗行程
+                    </div>
+                    <hr class="text-muted">
+                    <div class="d-flex flex-wrap">
+                        <div>
+                            <p>排序 :</p>
+                        </div>
+                        <div>
+                            ｜
+                            <a href="#">kkday推薦</a>
+                        </div>
+                        <div>
+                            ｜
+                            <a href="#">熱門程度</a>
+                        </div>
+                        <div>
+                            ｜
+                            <a href="#">用戶評價</a>
+                        </div>
+                        <div>
+                            ｜
+                            <a href="#">$價格：低到高</a>
+                        </div>
+                    </div>
+                </div>
+                <!--商品單項-->
+                <div class="mb-3">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <a href="#123" target="_blank" rel="noopener">
+                                    <img src="https://picsum.photos/200/200"
+                                        class="w-100 img-fluid rounded-start product-pic" alt="...">
+                                </a>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <a href="#123" target="_blank" rel="noopener">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title mb-3">商品標題</h5>
+                                            <div class="text-muted">
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#123" target="_blank" rel="noopener">
+                                        <p class="card-text mb-3">商品敘述內容：This is a wider card with supporting text below
+                                            as
+                                            a natural lead-in to additional content. This content is a little bit
+                                            longer.
+                                        </p>
+                                    </a>
+                                    <!--產品資訊：地點&日期-->
+                                    <a href="#123" target="_blank" rel="noopener">
+                                        <div class="product-info mb-5 d-flex gap-3">
+                                            <!--地點-->
+                                            <div class="d-flex gap-1">
+                                                <span class="text-muted"><i class="bi bi-geo-alt-fill"></i></span>
+                                                <p><small class="text-muted">地點</small></p>
+                                            </div>
+                                            <!--日期-->
+                                            <div class="d-flex gap-1">
+                                                <span class="text-muted"><i class="bi bi-calendar"></i></span>
+                                                <p><small class="text-muted">最早可預訂日期：2022-05-06</small></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--產品資訊：評價&熱門程度&價格-->
+                                    <a href="#123" target="_blank" rel="noopener">
+                                    <div class="product-footer d-flex gap-3 position-absolute bottom-0 ">
+                                            <!--評價-->
+                                            <div class="product-star d-flex">
+                                                <span class="text-warning"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16" fill="currentColor"
+                                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg></span>
+                                                <p><small class="text-muted">(星星評價數)</small></p>
+                                            </div>
+                                            <span class="divider">|</span>
+                                            <!--熱門程度-->
+                                            <div class="prodcut-book d-flex gap-1 text-danger">
+                                                <span><i class="fas fa-fire"></i></span>
+                                                <p><small class="text-muted">xxxx個已訂購</small></p>
+                                            </div>
+                                            <!--價格-->
+                                            <div class="product-price gap-3">
+                                                <div>
+                                                    <h4 class="fw-bold">TWD X,XXX </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--商品分頁-->
+                <div class="mt-5">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination d-flex justify-content-center">
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item"><a class="page-link" href="#">></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-3">
+
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
