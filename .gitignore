@@ -2,6 +2,13 @@
 *.v2
 TFM104MVC/.vs/TFM104MVC/v16/.suo
 TFM104MVC/TFM104MVC/obj/Debug/net5.0/TFM104MVC.csproj.AssemblyReference.cache
+
+TFM104MVC/.vs/TFM104MVC/DesignTimeBuild/.dtbcache.v2
+TFM104MVC/.vs/TFM104MVC/v16/.suo
+TFM104MVC/TFM104MVC/obj/Debug/net5.0/TFM104MVC.assets.cache
+TFM104MVC/TFM104MVC/obj/Debug/net5.0/TFM104MVC.csproj.AssemblyReference.cache
+*.cache
 *.cache
 TFM104MVC/.vs/TFM104MVC/v16/.suo
-TFM104MVC/.vs/TFM104MVC/v16/.suo
+*.v2
+
