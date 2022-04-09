@@ -958,3 +958,5 @@ C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\ref\TFM104MVC.dll
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.pdb
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.genruntimeconfig.cache
+C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\Razor\Views\Collect\WishList.cshtml.g.cs
+C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Facebook.dll

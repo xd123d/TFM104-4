@@ -34,6 +34,7 @@
       "TFM104MVC/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "5.0.13",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.15",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.13",
           "Microsoft.EntityFrameworkCore": "5.0.15",
@@ -361,6 +362,17 @@
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
           }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/5.0.13": {
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "5.0.13.0",
+            "fileVersion": "5.0.1321.57202"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.15": {
@@ -3615,6 +3627,13 @@
       "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/5.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8b2ahFEoWQlV95S3mRyr11AmbC2bXG3KCJN9ClA+TSKu+u7sWxeYOfVU78hulHRaF8sYaTVxkLISQGDhzD2Tjg==",
+      "path": "microsoft.aspnetcore.authentication.facebook/5.0.13",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.5.0.13.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.15": {
       "type": "package",
