@@ -14,6 +14,8 @@ namespace TFM104MVC.Models
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPicture> ProductPictures { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<LineItem> LineItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Orderdetail> Orderdetails { get; set; }
         public DbSet<CustomerRating> CustomerRatings { get; set; }

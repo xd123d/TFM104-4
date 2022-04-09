@@ -8,10 +8,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
-<<<<<<< HEAD
 using System.Security.Cryptography;
-=======
->>>>>>> unity1
 using System.Text;
 using System.Threading.Tasks;
 using TFM104MVC.Dtos;
@@ -29,42 +26,33 @@ namespace TFM104MVC.Controllers
         private readonly IConfiguration _configuration;
         private readonly IAuthenticateRepository _authenticateRepository;
         private readonly IMapper _mapper;
-<<<<<<< HEAD
         private readonly ISender _sender;
         private readonly IProductRepository _productRepository;
         public AuthenticateController(IConfiguration configuration,IAuthenticateRepository authenticateRepository,IMapper mapper,ISender sender,IProductRepository productRepository)
-=======
-        public AuthenticateController(IConfiguration configuration,IAuthenticateRepository authenticateRepository,IMapper mapper)
->>>>>>> unity1
+
         {
             _configuration = configuration;
             _authenticateRepository = authenticateRepository;
             _mapper = mapper;
-<<<<<<< HEAD
             _sender = sender;
             _productRepository = productRepository;
-=======
->>>>>>> unity1
+
         }
 
         [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult login([FromBody]LoginDto loginDto)
         {
-<<<<<<< HEAD
             // 1.驗證帳號與密碼正確與否
             //先驗證帳號 看有沒有此帳號存在 如果沒有 返回帳號密碼錯誤
             //若成功 則得到資料庫裡面這位User的資料 就可以把他的密碼和鹽拿出來做處理
             var loginUser = _authenticateRepository.AccountCheck(loginDto.Account);
-=======
-            // 1. 驗證帳號與密碼正確與否 //TODO
-            var loginUser = _authenticateRepository.CheckUser(loginDto.Account, loginDto.Password);
->>>>>>> unity1
+
+            //var loginUser = _authenticateRepository.CheckUser(loginDto.Account, loginDto.Password);
             if(loginUser == null)
             {
                 return NotFound("帳號或密碼錯誤");
             }
-<<<<<<< HEAD
             string salt = loginUser.Salt;
             byte[] passwordAndSaltBytes = Encoding.UTF8.GetBytes(loginDto.Password + salt);
             byte[] hashBytes = new SHA256Managed().ComputeHash(passwordAndSaltBytes);
@@ -75,8 +63,7 @@ namespace TFM104MVC.Controllers
             {
                 return NotFound("帳號密碼錯誤");
             }
-=======
->>>>>>> unity1
+
             // 2.若正確 則創建JWT Token
             // header (SHA256加密Header)
             var signinAlgorithm = SecurityAlgorithms.HmacSha256;
@@ -109,7 +96,6 @@ namespace TFM104MVC.Controllers
 
         [AllowAnonymous]
         [HttpPost("register")]
-<<<<<<< HEAD
         public async Task<IActionResult> register([FromBody] UserForCreationDto userForCreationDto)
         {
             var userModel = _mapper.Map<User>(userForCreationDto);
@@ -123,18 +109,12 @@ namespace TFM104MVC.Controllers
             userModel.Password = hashStr;
             userModel.Salt = salt;
 
-=======
-        public IActionResult register([FromBody] UserForCreationDto userForCreationDto)
-        {
-            var userModel = _mapper.Map<User>(userForCreationDto);
->>>>>>> unity1
+
             var accountCheck = _authenticateRepository.AccountCheck(userForCreationDto.Account);
             if(accountCheck != null)
             {
                 return NotFound("帳號重複 請更換帳號名稱");
             }
-<<<<<<< HEAD
-
             _authenticateRepository.AddUser(userModel);
             _authenticateRepository.Save();
 
@@ -194,12 +174,9 @@ namespace TFM104MVC.Controllers
             return Ok("更新密碼完成，請妥善保管您的密碼");
 
         }
-=======
-            _authenticateRepository.AddUser(userModel);
-            _authenticateRepository.Save();
-            return Ok("註冊成功");
-        }
-
->>>>>>> unity1
+        //    _authenticateRepository.AddUser(userModel);
+        //    _authenticateRepository.Save();
+        //    return Ok("註冊成功");
+        //}
     }
 }

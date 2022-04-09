@@ -13,24 +13,24 @@ namespace TFM104MVC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "帳號不可為空")]
-        [EmailAddress(ErrorMessage = "須符合Email格式")]
+        //[Required(ErrorMessage = "帳號不可為空")]
+        //[EmailAddress(ErrorMessage = "須符合Email格式")]
+
+        [Required]
+        [EmailAddress]
         public string Account { get; set; }         //1.使用者帳號 信箱
 
         [Required]
         public string Password { get; set; }        //2.使用者密碼 //SHA256
 
         //[Required]
-        //public string Salt { get; set; }    //加鹽
+        public string Salt { get; set; }    //加鹽
 
-        [Required]
         public string LastName { get; set; }  //姓
 
-        [Required]
         public string FirstName { get; set; }  //名
 
         //5.電話
-        [Required]
         [Phone]
         public string Phone { get; set; }
 
@@ -50,5 +50,9 @@ namespace TFM104MVC.Models
 
         //會員
         public virtual Member Members { get; set; }
+
+        public virtual ShoppingCart ShoppingCart { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

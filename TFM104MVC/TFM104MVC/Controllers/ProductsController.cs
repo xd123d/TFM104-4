@@ -12,10 +12,8 @@ using TFM104MVC.ResouceParameters;
 using TFM104MVC.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.JsonPatch;
-=======
->>>>>>> unity1
+
 
 namespace TFM104MVC.Controllers
 {
@@ -54,11 +52,8 @@ namespace TFM104MVC.Controllers
                     ratingValue = int.Parse(match.Groups[2].Value);
                 }
             }
-<<<<<<< HEAD
             var productsFromRepo = await _productRepository.GetProductsAsync(parameters.Keyword, operatorType, ratingValue, parameters.Region, parameters.Traveldays, parameters.Triptype,parameters.PageSize,parameters.PageNumber);
-=======
-            var productsFromRepo = await _productRepository.GetProductsAsync(parameters.Keyword, operatorType, ratingValue, parameters.Region, parameters.Traveldays, parameters.Triptype);
->>>>>>> unity1
+
 
             if (productsFromRepo == null || productsFromRepo.Count() <= 0)
             {
@@ -99,12 +94,9 @@ namespace TFM104MVC.Controllers
         }
 
         [HttpPost] // api/products
-<<<<<<< HEAD
         [Authorize(Roles ="Admin,Firm")]
         [Authorize(AuthenticationSchemes ="Bearer")]
-=======
-        [Authorize(Roles ="Admin")]
->>>>>>> unity1
+
         public async Task<IActionResult> CreateProduct([FromForm] ProductCreationDto productCreationDto)
         {
             string rootRoot = _environment.ContentRootPath + @"\wwwroot\ProductPictures\";
@@ -128,11 +120,8 @@ namespace TFM104MVC.Controllers
         }
 
         [HttpPut("{productId}")]
-<<<<<<< HEAD
         [Authorize(Roles = "Admin,Firm")]
-=======
-        [Authorize(Roles = "Admin")]
->>>>>>> unity1
+
         public async Task<IActionResult> UpdateProduct(
             [FromRoute]Guid productId,
             [FromBody]ProductUpdateDto productUpdateDto
@@ -152,7 +141,6 @@ namespace TFM104MVC.Controllers
 
             return NoContent();
         }
-<<<<<<< HEAD
 
         [HttpPatch("{productId}")]
         public async Task<IActionResult> PartiallyUpdateProfuct(
@@ -185,10 +173,6 @@ namespace TFM104MVC.Controllers
         }
         [HttpDelete("{productId}")]
         [Authorize(Roles = "Admin,Firm")]
-=======
-        [HttpDelete("{productId}")]
-        [Authorize(Roles = "Admin")]
->>>>>>> unity1
         public async Task<IActionResult> DeleteProduct([FromRoute]Guid productId)
         {
             if (!( await _productRepository.ProductExistAsync(productId)))

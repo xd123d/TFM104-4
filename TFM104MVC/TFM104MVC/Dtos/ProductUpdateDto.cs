@@ -7,10 +7,8 @@ using TFM104MVC.ValidationAttributes;
 
 namespace TFM104MVC.Dtos
 {
-<<<<<<< HEAD
-=======
-    [ProductTitleMustBeDifferentFromDescriptionAttribute]
->>>>>>> unity1
+
+    //[ProductTitleMustBeDifferentFromDescriptionAttribute]
     public class ProductUpdateDto:ProductForManipulationDto
     {
         [Required(ErrorMessage ="更新必備")]
