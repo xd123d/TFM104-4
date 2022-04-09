@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using TFM104MVC.Dtos;
 using TFM104MVC.Models;
+using TFM104MVC.Models.Entity;
 
 namespace TFM104MVC.Profiles
 {

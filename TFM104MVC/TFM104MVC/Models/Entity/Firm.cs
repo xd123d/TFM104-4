@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TFM104MVC.Models
+namespace TFM104MVC.Models.Entity
 {
     public class Firm
     {

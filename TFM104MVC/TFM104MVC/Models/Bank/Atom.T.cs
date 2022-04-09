@@ -1,4 +1,4 @@
-﻿namespace TFM104MVC.Models
+﻿namespace TFM104MVC.Models.Bank
 {
     /// <summary>執行結果基元(泛型)</summary>
     public class Atom<T>

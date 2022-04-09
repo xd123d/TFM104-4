@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using TFM104MVC.Extensions;
 
-namespace TFM104MVC.Controllers
+namespace TFM104MVC.Models.Bank.Util
 {
     /// <summary>
     /// 智付通加解密Util

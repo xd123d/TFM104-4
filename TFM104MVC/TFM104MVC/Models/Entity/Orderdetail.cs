@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TFM104MVC.Models
+namespace TFM104MVC.Models.Entity
 {
     public class Orderdetail
     {

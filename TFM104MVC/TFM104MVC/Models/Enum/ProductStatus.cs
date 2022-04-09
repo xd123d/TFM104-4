@@ -1,4 +1,4 @@
-﻿namespace TFM104MVC.Models
+﻿namespace TFM104MVC.Models.Enum
 {
     public enum ProductStatus
     {

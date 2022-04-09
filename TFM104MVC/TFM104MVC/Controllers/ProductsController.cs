@@ -13,7 +13,7 @@ using TFM104MVC.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
-
+using TFM104MVC.Models.Entity;
 
 namespace TFM104MVC.Controllers
 {

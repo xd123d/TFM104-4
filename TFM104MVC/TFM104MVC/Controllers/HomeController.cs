@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TFM104MVC.Models;
+using TFM104MVC.Models.Entity;
 
 namespace TFM104MVC.Controllers
 {

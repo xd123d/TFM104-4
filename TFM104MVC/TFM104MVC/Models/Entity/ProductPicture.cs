@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace TFM104MVC.Models
+namespace TFM104MVC.Models.Entity
 {
     public class ProductPicture
     {

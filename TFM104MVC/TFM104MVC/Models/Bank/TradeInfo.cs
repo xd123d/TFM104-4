@@ -1,4 +1,4 @@
-﻿namespace TFM104MVC.Controllers
+﻿namespace TFM104MVC.Models.Bank
 {
     public class TradeInfo
     {

@@ -1,4 +1,4 @@
-﻿namespace TFM104MVC.Controllers
+﻿namespace TFM104MVC.Models.Bank
 {
     /// <summary>
     /// [智付通]介接資料模型

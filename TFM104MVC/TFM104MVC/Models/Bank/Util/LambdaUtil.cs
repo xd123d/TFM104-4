@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace TFM104MVC.Controllers
+namespace TFM104MVC.Models.Bank.Util
 {
     /// <summary>
     /// [Lambda]通用函式

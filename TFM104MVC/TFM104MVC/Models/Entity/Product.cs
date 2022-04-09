@@ -5,8 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using TFM104MVC.Models.Enum;
 
-namespace TFM104MVC.Models
+namespace TFM104MVC.Models.Entity
 {
     public class Product
     {
