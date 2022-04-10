@@ -410,6 +410,7 @@ C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\bin\Debug\net5
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.csproj.AssemblyReference.cache
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.AssemblyInfoInputs.cache
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.AssemblyInfo.cs
@@ -446,4 +447,3 @@ C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\ref\TFM104MVC.dll
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.pdb
 C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.genruntimeconfig.cache
-C:\Users\Tibame_T14\Documents\GitHub\TFM104-4\TFM104MVC\TFM104MVC\obj\Debug\net5.0\TFM104MVC.csproj.AssemblyReference.cache
