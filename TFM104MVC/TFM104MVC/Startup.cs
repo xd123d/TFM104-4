@@ -84,6 +84,9 @@ namespace TFM104MVC
             services.AddSingleton<ISender, EmailSender>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+
+            // 將 Session 存在 ASP.NET Core 記憶體中
+            services.AddDistributedMemoryCache();
             //註冊session服務
             services.AddSession();
 
@@ -119,6 +122,15 @@ namespace TFM104MVC
 
             // SessionMiddleware 加入 Pipeline
             app.UseSession();
+
+            //試跑一次看有沒有加到 //結果確實有加到
+            //app.Run(async (context) =>
+            //{
+            //    context.Session.SetString("Sample", "This is Session.");
+            //    string message = context.Session.GetString("Sample");
+            //    await context.Response.WriteAsync($"{message}");
+            //});
+
 
             app.UseEndpoints(endpoints =>
             {
