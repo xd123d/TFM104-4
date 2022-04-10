@@ -107,16 +107,38 @@ namespace TFM104MVC.Controllers
                 CVS = null,
                 // 超商條碼繳費啟用(1=啟用、0或者未有此參數，即代表不開啟)(當該筆訂單金額小於 20 元或超過 4 萬元時，即使此參數設定為啟用，MPG 付款頁面仍不會顯示此支付方式選項。)
                 BARCODE = null,
-                LINEPAY= null
+                //LINEPAY= null,
+                ANDROIDPAY=null,
+                SAMSUNGPAY=null,
             };
 
             if (PayMethod == "creditcard")
             {
                 tradeInfo.CREDIT = 1;
             }                
-            else if (PayMethod == "linePay")
+            else if (PayMethod == "WEBATM")
             {
-                tradeInfo.LINEPAY = 1;
+                tradeInfo.WEBATM = 1;
+            }
+            else if (PayMethod == "VACC")
+            {
+                tradeInfo.VACC = 1;
+            }
+            else if (PayMethod == "CVS")
+            {
+                tradeInfo.CVS = 1;
+            }
+            else if (PayMethod == "BARCODE")
+            {
+                tradeInfo.BARCODE = 1;
+            }
+            else if (PayMethod == "GooglePay")
+            {
+                tradeInfo.ANDROIDPAY = 1;
+            }
+            else if (PayMethod == "SamsungPay")
+            {
+                tradeInfo.SAMSUNGPAY = 1;
             }
 
             Atom<string> result = new Atom<string>()
@@ -134,7 +156,6 @@ namespace TFM104MVC.Controllers
             List<KeyValuePair<string, string>> tradeData = LambdaUtil.ModelToKeyValuePairList<TradeInfo>(tradeInfo);
             // 將List<KeyValuePair<string, string>> 轉換為 key1=Value1&key2=Value2&key3=Value3...
             var tradeQueryPara = string.Join("&", tradeData.Select(x => $"{x.Key}={x.Value}"));
-            tradeQueryPara = tradeQueryPara + "&SAMSUNGPAY=1&ANDROIDPAY=1";
             // AES 加密
             inputModel.TradeInfo = CryptoUtil.EncryptAESHex(tradeQueryPara, _bankInfoModel.HashKey, _bankInfoModel.HashIV);
             // SHA256 加密
