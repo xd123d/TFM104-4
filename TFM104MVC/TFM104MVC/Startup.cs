@@ -53,6 +53,21 @@ namespace TFM104MVC
                         IssuerSigningKey = new SymmetricSecurityKey(secretByte)
                     };
                 });
+            //---FB¥Î(­×)
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(opt =>
+            {
+                opt.LoginPath = "/Shared/_Layout";
+            }).AddFacebook(opt =>
+            {
+                opt.AppId = "461446905740380";
+                opt.AppSecret = "9521db1cab2a6400f1c62ff393069bae";
+            });
+            //
+
+
             services.AddControllersWithViews();
             services.AddControllers(setupAction => setupAction.ReturnHttpNotAcceptable = true)
                 .AddNewtonsoftJson(setupAction=> {
