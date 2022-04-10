@@ -37,7 +37,7 @@ namespace TFM104MVC
         {
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options => 
+                .AddJwtBearer(options =>
                 {
                     var secretByte = Encoding.UTF8.GetBytes(Configuration["Authentication:SecretKey"]);
                     options.TokenValidationParameters = new TokenValidationParameters()
@@ -55,7 +55,8 @@ namespace TFM104MVC
                 });
             services.AddControllersWithViews();
             services.AddControllers(setupAction => setupAction.ReturnHttpNotAcceptable = true)
-                .AddNewtonsoftJson(setupAction=> {
+                .AddNewtonsoftJson(setupAction =>
+                {
                     setupAction.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 })
                 .AddXmlDataContractSerializerFormatters()
@@ -82,9 +83,16 @@ namespace TFM104MVC
             services.AddTransient<IAuthenticateRepository, AuthenticateRepository>();
             services.AddSingleton<ISender, EmailSender>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //註冊session服務
+            services.AddSession();
+
             services.AddDbContext<AppDbContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("MVC")));
             //掃描profile檔案
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,6 +116,9 @@ namespace TFM104MVC
             app.UseAuthentication(); // 表示 你是誰
 
             app.UseAuthorization(); // 表示 你可以幹什麼
+
+            // SessionMiddleware 加入 Pipeline
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
