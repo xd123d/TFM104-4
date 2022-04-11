@@ -17,7 +17,8 @@ namespace TFM104MVC.Profiles
                 .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.OriginalPrice * (decimal)(src.DiscountPersent ?? 1)))
                 .ForMember(dest => dest.TravelDays, opt => opt.MapFrom(src => src.TravelDays.ToString()))
                 .ForMember(dest => dest.TripType, opt => opt.MapFrom(src => src.TripType.ToString()))
-                .ForMember(dest => dest.Region, opt => opt.MapFrom(src => src.Region.ToString()));
+                .ForMember(dest => dest.Region, opt => opt.MapFrom(src => src.Region.ToString()))
+                .ForMember(dest => dest.ProductStatus, opt => opt.MapFrom(src => src.ProductStatus.ToString()));
 
             CreateMap<ProductCreationDto, Product>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));

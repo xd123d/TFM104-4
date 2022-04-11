@@ -769,7 +769,7 @@
                             <button type="button" class="btn btn-primary">加入購物車</button>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-info">立即訂購</button>
+                            <button type="button" class="btn btn-info" onclick="location.href='/Purchase/Booking' ">立即訂購</button>
                         </div>
                         <div class="align-middle">
                             <div>
@@ -808,7 +808,6 @@
         computed: {
 
             totalPicBtn: () => {
-
                 return this.pic.length / this.btn;
             }
 
